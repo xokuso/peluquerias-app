@@ -1,0 +1,922 @@
+{
+  "timestamp": "2025-11-20T21:54:50.674Z",
+  "pages": [
+    {
+      "name": "Landing Page",
+      "url": "http://localhost:3000/",
+      "viewports": {
+        "desktop": {
+          "screenshot": "/Users/alex/Desktop/claudecodefy/peluquerias-app/ui-validation-screenshots/landing-page-desktop.png",
+          "validation": {
+            "responsive": true,
+            "elements": {
+              "header": {
+                "found": false,
+                "visible": false
+              },
+              "nav": {
+                "found": true,
+                "visible": true
+              },
+              ".hero": {
+                "found": false,
+                "visible": false
+              },
+              ".features": {
+                "found": false,
+                "visible": false
+              },
+              "footer": {
+                "found": true,
+                "visible": true
+              }
+            },
+            "accessibility": {},
+            "performance": {},
+            "errors": [
+              "Elemento faltante: header",
+              "Elemento faltante: .hero",
+              "Elemento faltante: .features"
+            ]
+          },
+          "loadTime": 1763675698459,
+          "dimensions": {
+            "width": 1920,
+            "height": 1080
+          }
+        },
+        "tablet": {
+          "error": "HTTP 500 - Página no accesible",
+          "screenshot": null
+        },
+        "mobile": {
+          "screenshot": "/Users/alex/Desktop/claudecodefy/peluquerias-app/ui-validation-screenshots/landing-page-mobile.png",
+          "validation": {
+            "responsive": true,
+            "elements": {
+              "header": {
+                "found": false,
+                "visible": false
+              },
+              "nav": {
+                "found": true,
+                "visible": true
+              },
+              ".hero": {
+                "found": false,
+                "visible": false
+              },
+              ".features": {
+                "found": false,
+                "visible": false
+              },
+              "footer": {
+                "found": true,
+                "visible": true
+              }
+            },
+            "accessibility": {},
+            "performance": {},
+            "errors": [
+              "Elemento faltante: header",
+              "Elemento faltante: .hero",
+              "Elemento faltante: .features",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: BUTTON",
+              "Elemento clickeable muy pequeño: BUTTON",
+              "Elemento clickeable muy pequeño: BUTTON",
+              "Elemento clickeable muy pequeño: BUTTON",
+              "Elemento clickeable muy pequeño: BUTTON",
+              "Elemento clickeable muy pequeño: BUTTON",
+              "Elemento clickeable muy pequeño: BUTTON",
+              "Elemento clickeable muy pequeño: BUTTON",
+              "Elemento clickeable muy pequeño: BUTTON",
+              "Elemento clickeable muy pequeño: BUTTON",
+              "Elemento clickeable muy pequeño: BUTTON",
+              "Elemento clickeable muy pequeño: BUTTON",
+              "Elemento clickeable muy pequeño: BUTTON",
+              "Elemento clickeable muy pequeño: BUTTON",
+              "Elemento clickeable muy pequeño: BUTTON",
+              "Elemento clickeable muy pequeño: BUTTON",
+              "Elemento clickeable muy pequeño: BUTTON",
+              "Elemento clickeable muy pequeño: BUTTON",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: BUTTON",
+              "Elemento clickeable muy pequeño: BUTTON"
+            ]
+          },
+          "loadTime": 1763675704289,
+          "dimensions": {
+            "width": 375,
+            "height": 667
+          }
+        }
+      },
+      "issues": [
+        "Elemento faltante: header",
+        "Elemento faltante: .hero",
+        "Elemento faltante: .features",
+        "Error en tablet: HTTP 500 - Página no accesible",
+        "Elemento faltante: header",
+        "Elemento faltante: .hero",
+        "Elemento faltante: .features",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: BUTTON",
+        "Elemento clickeable muy pequeño: BUTTON",
+        "Elemento clickeable muy pequeño: BUTTON",
+        "Elemento clickeable muy pequeño: BUTTON",
+        "Elemento clickeable muy pequeño: BUTTON",
+        "Elemento clickeable muy pequeño: BUTTON",
+        "Elemento clickeable muy pequeño: BUTTON",
+        "Elemento clickeable muy pequeño: BUTTON",
+        "Elemento clickeable muy pequeño: BUTTON",
+        "Elemento clickeable muy pequeño: BUTTON",
+        "Elemento clickeable muy pequeño: BUTTON",
+        "Elemento clickeable muy pequeño: BUTTON",
+        "Elemento clickeable muy pequeño: BUTTON",
+        "Elemento clickeable muy pequeño: BUTTON",
+        "Elemento clickeable muy pequeño: BUTTON",
+        "Elemento clickeable muy pequeño: BUTTON",
+        "Elemento clickeable muy pequeño: BUTTON",
+        "Elemento clickeable muy pequeño: BUTTON",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: BUTTON",
+        "Elemento clickeable muy pequeño: BUTTON"
+      ],
+      "status": "failed"
+    },
+    {
+      "name": "Login Page",
+      "url": "http://localhost:3000/auth/login",
+      "viewports": {
+        "desktop": {
+          "screenshot": "/Users/alex/Desktop/claudecodefy/peluquerias-app/ui-validation-screenshots/login-page-desktop.png",
+          "validation": {
+            "responsive": true,
+            "elements": {
+              "form": {
+                "found": true,
+                "visible": true
+              },
+              "input[type=\"email\"]": {
+                "found": true,
+                "visible": true
+              },
+              "input[type=\"password\"]": {
+                "found": true,
+                "visible": true
+              },
+              "button[type=\"submit\"]": {
+                "found": true,
+                "visible": true
+              }
+            },
+            "accessibility": {},
+            "performance": {},
+            "errors": []
+          },
+          "loadTime": 1763675707394,
+          "dimensions": {
+            "width": 1920,
+            "height": 1080
+          }
+        },
+        "tablet": {
+          "screenshot": "/Users/alex/Desktop/claudecodefy/peluquerias-app/ui-validation-screenshots/login-page-tablet.png",
+          "validation": {
+            "responsive": true,
+            "elements": {
+              "form": {
+                "found": true,
+                "visible": true
+              },
+              "input[type=\"email\"]": {
+                "found": true,
+                "visible": true
+              },
+              "input[type=\"password\"]": {
+                "found": true,
+                "visible": true
+              },
+              "button[type=\"submit\"]": {
+                "found": true,
+                "visible": true
+              }
+            },
+            "accessibility": {},
+            "performance": {},
+            "errors": []
+          },
+          "loadTime": 1763675710698,
+          "dimensions": {
+            "width": 768,
+            "height": 1024
+          }
+        },
+        "mobile": {
+          "screenshot": "/Users/alex/Desktop/claudecodefy/peluquerias-app/ui-validation-screenshots/login-page-mobile.png",
+          "validation": {
+            "responsive": true,
+            "elements": {
+              "form": {
+                "found": true,
+                "visible": true
+              },
+              "input[type=\"email\"]": {
+                "found": true,
+                "visible": true
+              },
+              "input[type=\"password\"]": {
+                "found": true,
+                "visible": true
+              },
+              "button[type=\"submit\"]": {
+                "found": true,
+                "visible": true
+              }
+            },
+            "accessibility": {},
+            "performance": {},
+            "errors": [
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: BUTTON",
+              "Elemento clickeable muy pequeño: BUTTON",
+              "Elemento clickeable muy pequeño: BUTTON",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: BUTTON",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: BUTTON",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: BUTTON",
+              "Elemento clickeable muy pequeño: BUTTON"
+            ]
+          },
+          "loadTime": 1763675713572,
+          "dimensions": {
+            "width": 375,
+            "height": 667
+          }
+        }
+      },
+      "issues": [
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: BUTTON",
+        "Elemento clickeable muy pequeño: BUTTON",
+        "Elemento clickeable muy pequeño: BUTTON",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: BUTTON",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: BUTTON",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: BUTTON",
+        "Elemento clickeable muy pequeño: BUTTON"
+      ],
+      "status": "failed"
+    },
+    {
+      "name": "Signup Page",
+      "url": "http://localhost:3000/auth/signup",
+      "viewports": {
+        "desktop": {
+          "screenshot": "/Users/alex/Desktop/claudecodefy/peluquerias-app/ui-validation-screenshots/signup-page-desktop.png",
+          "validation": {
+            "responsive": true,
+            "elements": {
+              "form": {
+                "found": true,
+                "visible": true
+              },
+              "input[type=\"email\"]": {
+                "found": true,
+                "visible": true
+              },
+              "input[type=\"password\"]": {
+                "found": true,
+                "visible": true
+              },
+              "button[type=\"submit\"]": {
+                "found": true,
+                "visible": true
+              }
+            },
+            "accessibility": {},
+            "performance": {},
+            "errors": []
+          },
+          "loadTime": 1763675716629,
+          "dimensions": {
+            "width": 1920,
+            "height": 1080
+          }
+        },
+        "tablet": {
+          "screenshot": "/Users/alex/Desktop/claudecodefy/peluquerias-app/ui-validation-screenshots/signup-page-tablet.png",
+          "validation": {
+            "responsive": true,
+            "elements": {
+              "form": {
+                "found": true,
+                "visible": true
+              },
+              "input[type=\"email\"]": {
+                "found": true,
+                "visible": true
+              },
+              "input[type=\"password\"]": {
+                "found": true,
+                "visible": true
+              },
+              "button[type=\"submit\"]": {
+                "found": true,
+                "visible": true
+              }
+            },
+            "accessibility": {},
+            "performance": {},
+            "errors": []
+          },
+          "loadTime": 1763675719715,
+          "dimensions": {
+            "width": 768,
+            "height": 1024
+          }
+        },
+        "mobile": {
+          "screenshot": "/Users/alex/Desktop/claudecodefy/peluquerias-app/ui-validation-screenshots/signup-page-mobile.png",
+          "validation": {
+            "responsive": true,
+            "elements": {
+              "form": {
+                "found": true,
+                "visible": true
+              },
+              "input[type=\"email\"]": {
+                "found": true,
+                "visible": true
+              },
+              "input[type=\"password\"]": {
+                "found": true,
+                "visible": true
+              },
+              "button[type=\"submit\"]": {
+                "found": true,
+                "visible": true
+              }
+            },
+            "accessibility": {},
+            "performance": {},
+            "errors": [
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: BUTTON",
+              "Elemento clickeable muy pequeño: BUTTON",
+              "Elemento clickeable muy pequeño: BUTTON",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: BUTTON",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: BUTTON",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: BUTTON",
+              "Elemento clickeable muy pequeño: BUTTON"
+            ]
+          },
+          "loadTime": 1763675722741,
+          "dimensions": {
+            "width": 375,
+            "height": 667
+          }
+        }
+      },
+      "issues": [
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: BUTTON",
+        "Elemento clickeable muy pequeño: BUTTON",
+        "Elemento clickeable muy pequeño: BUTTON",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: BUTTON",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: BUTTON",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: BUTTON",
+        "Elemento clickeable muy pequeño: BUTTON"
+      ],
+      "status": "failed"
+    },
+    {
+      "name": "Admin Panel",
+      "url": "http://localhost:3000/admin",
+      "viewports": {
+        "desktop": {
+          "screenshot": "/Users/alex/Desktop/claudecodefy/peluquerias-app/ui-validation-screenshots/admin-panel-desktop.png",
+          "validation": {
+            "responsive": true,
+            "elements": {
+              ".dashboard": {
+                "found": false,
+                "visible": false
+              },
+              ".metrics": {
+                "found": false,
+                "visible": false
+              },
+              "nav": {
+                "found": true,
+                "visible": true
+              },
+              ".sidebar": {
+                "found": false,
+                "visible": false
+              }
+            },
+            "accessibility": {},
+            "performance": {},
+            "errors": [
+              "Elemento faltante: .dashboard",
+              "Elemento faltante: .metrics",
+              "Elemento faltante: .sidebar"
+            ]
+          },
+          "loadTime": 1763675725634,
+          "dimensions": {
+            "width": 1920,
+            "height": 1080
+          }
+        },
+        "tablet": {
+          "screenshot": "/Users/alex/Desktop/claudecodefy/peluquerias-app/ui-validation-screenshots/admin-panel-tablet.png",
+          "validation": {
+            "responsive": true,
+            "elements": {
+              ".dashboard": {
+                "found": false,
+                "visible": false
+              },
+              ".metrics": {
+                "found": false,
+                "visible": false
+              },
+              "nav": {
+                "found": true,
+                "visible": true
+              },
+              ".sidebar": {
+                "found": false,
+                "visible": false
+              }
+            },
+            "accessibility": {},
+            "performance": {},
+            "errors": [
+              "Elemento faltante: .dashboard",
+              "Elemento faltante: .metrics",
+              "Elemento faltante: .sidebar"
+            ]
+          },
+          "loadTime": 1763675728808,
+          "dimensions": {
+            "width": 768,
+            "height": 1024
+          }
+        },
+        "mobile": {
+          "screenshot": "/Users/alex/Desktop/claudecodefy/peluquerias-app/ui-validation-screenshots/admin-panel-mobile.png",
+          "validation": {
+            "responsive": true,
+            "elements": {
+              ".dashboard": {
+                "found": false,
+                "visible": false
+              },
+              ".metrics": {
+                "found": false,
+                "visible": false
+              },
+              "nav": {
+                "found": true,
+                "visible": true
+              },
+              ".sidebar": {
+                "found": false,
+                "visible": false
+              }
+            },
+            "accessibility": {},
+            "performance": {},
+            "errors": [
+              "Elemento faltante: .dashboard",
+              "Elemento faltante: .metrics",
+              "Elemento faltante: .sidebar",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: BUTTON",
+              "Elemento clickeable muy pequeño: BUTTON",
+              "Elemento clickeable muy pequeño: BUTTON",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: BUTTON",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: BUTTON",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: BUTTON",
+              "Elemento clickeable muy pequeño: BUTTON"
+            ]
+          },
+          "loadTime": 1763675731855,
+          "dimensions": {
+            "width": 375,
+            "height": 667
+          }
+        }
+      },
+      "issues": [
+        "Elemento faltante: .dashboard",
+        "Elemento faltante: .metrics",
+        "Elemento faltante: .sidebar",
+        "Elemento faltante: .dashboard",
+        "Elemento faltante: .metrics",
+        "Elemento faltante: .sidebar",
+        "Elemento faltante: .dashboard",
+        "Elemento faltante: .metrics",
+        "Elemento faltante: .sidebar",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: BUTTON",
+        "Elemento clickeable muy pequeño: BUTTON",
+        "Elemento clickeable muy pequeño: BUTTON",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: BUTTON",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: BUTTON",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: BUTTON",
+        "Elemento clickeable muy pequeño: BUTTON"
+      ],
+      "status": "failed"
+    },
+    {
+      "name": "Client Panel",
+      "url": "http://localhost:3000/client",
+      "viewports": {
+        "desktop": {
+          "screenshot": "/Users/alex/Desktop/claudecodefy/peluquerias-app/ui-validation-screenshots/client-panel-desktop.png",
+          "validation": {
+            "responsive": true,
+            "elements": {
+              ".client-dashboard": {
+                "found": false,
+                "visible": false
+              },
+              "nav": {
+                "found": true,
+                "visible": true
+              },
+              ".appointment-section": {
+                "found": false,
+                "visible": false
+              }
+            },
+            "accessibility": {},
+            "performance": {},
+            "errors": [
+              "Elemento faltante: .client-dashboard",
+              "Elemento faltante: .appointment-section"
+            ]
+          },
+          "loadTime": 1763675734908,
+          "dimensions": {
+            "width": 1920,
+            "height": 1080
+          }
+        },
+        "tablet": {
+          "screenshot": "/Users/alex/Desktop/claudecodefy/peluquerias-app/ui-validation-screenshots/client-panel-tablet.png",
+          "validation": {
+            "responsive": true,
+            "elements": {
+              ".client-dashboard": {
+                "found": false,
+                "visible": false
+              },
+              "nav": {
+                "found": true,
+                "visible": true
+              },
+              ".appointment-section": {
+                "found": false,
+                "visible": false
+              }
+            },
+            "accessibility": {},
+            "performance": {},
+            "errors": [
+              "Elemento faltante: .client-dashboard",
+              "Elemento faltante: .appointment-section"
+            ]
+          },
+          "loadTime": 1763675738328,
+          "dimensions": {
+            "width": 768,
+            "height": 1024
+          }
+        },
+        "mobile": {
+          "screenshot": "/Users/alex/Desktop/claudecodefy/peluquerias-app/ui-validation-screenshots/client-panel-mobile.png",
+          "validation": {
+            "responsive": true,
+            "elements": {
+              ".client-dashboard": {
+                "found": false,
+                "visible": false
+              },
+              "nav": {
+                "found": true,
+                "visible": true
+              },
+              ".appointment-section": {
+                "found": false,
+                "visible": false
+              }
+            },
+            "accessibility": {},
+            "performance": {},
+            "errors": [
+              "Elemento faltante: .client-dashboard",
+              "Elemento faltante: .appointment-section",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: BUTTON",
+              "Elemento clickeable muy pequeño: BUTTON",
+              "Elemento clickeable muy pequeño: BUTTON",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: BUTTON",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: BUTTON",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: BUTTON",
+              "Elemento clickeable muy pequeño: BUTTON"
+            ]
+          },
+          "loadTime": 1763675741340,
+          "dimensions": {
+            "width": 375,
+            "height": 667
+          }
+        }
+      },
+      "issues": [
+        "Elemento faltante: .client-dashboard",
+        "Elemento faltante: .appointment-section",
+        "Elemento faltante: .client-dashboard",
+        "Elemento faltante: .appointment-section",
+        "Elemento faltante: .client-dashboard",
+        "Elemento faltante: .appointment-section",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: BUTTON",
+        "Elemento clickeable muy pequeño: BUTTON",
+        "Elemento clickeable muy pequeño: BUTTON",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: BUTTON",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: BUTTON",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: BUTTON",
+        "Elemento clickeable muy pequeño: BUTTON"
+      ],
+      "status": "failed"
+    },
+    {
+      "name": "Checkout Page",
+      "url": "http://localhost:3000/checkout",
+      "viewports": {
+        "desktop": {
+          "screenshot": "/Users/alex/Desktop/claudecodefy/peluquerias-app/ui-validation-screenshots/checkout-page-desktop.png",
+          "validation": {
+            "responsive": true,
+            "elements": {
+              "form": {
+                "found": true,
+                "visible": true
+              },
+              ".payment-section": {
+                "found": false,
+                "visible": false
+              },
+              ".order-summary": {
+                "found": false,
+                "visible": false
+              }
+            },
+            "accessibility": {},
+            "performance": {},
+            "errors": [
+              "Elemento faltante: .payment-section",
+              "Elemento faltante: .order-summary"
+            ]
+          },
+          "loadTime": 1763675744324,
+          "dimensions": {
+            "width": 1920,
+            "height": 1080
+          }
+        },
+        "tablet": {
+          "screenshot": "/Users/alex/Desktop/claudecodefy/peluquerias-app/ui-validation-screenshots/checkout-page-tablet.png",
+          "validation": {
+            "responsive": true,
+            "elements": {
+              "form": {
+                "found": true,
+                "visible": true
+              },
+              ".payment-section": {
+                "found": false,
+                "visible": false
+              },
+              ".order-summary": {
+                "found": false,
+                "visible": false
+              }
+            },
+            "accessibility": {},
+            "performance": {},
+            "errors": [
+              "Elemento faltante: .payment-section",
+              "Elemento faltante: .order-summary"
+            ]
+          },
+          "loadTime": 1763675747676,
+          "dimensions": {
+            "width": 768,
+            "height": 1024
+          }
+        },
+        "mobile": {
+          "screenshot": "/Users/alex/Desktop/claudecodefy/peluquerias-app/ui-validation-screenshots/checkout-page-mobile.png",
+          "validation": {
+            "responsive": true,
+            "elements": {
+              "form": {
+                "found": true,
+                "visible": true
+              },
+              ".payment-section": {
+                "found": false,
+                "visible": false
+              },
+              ".order-summary": {
+                "found": false,
+                "visible": false
+              }
+            },
+            "accessibility": {},
+            "performance": {},
+            "errors": [
+              "Elemento faltante: .payment-section",
+              "Elemento faltante: .order-summary",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: BUTTON",
+              "Elemento clickeable muy pequeño: BUTTON",
+              "Elemento clickeable muy pequeño: BUTTON",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: BUTTON",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: BUTTON",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: A",
+              "Elemento clickeable muy pequeño: BUTTON",
+              "Elemento clickeable muy pequeño: BUTTON"
+            ]
+          },
+          "loadTime": 1763675750584,
+          "dimensions": {
+            "width": 375,
+            "height": 667
+          }
+        }
+      },
+      "issues": [
+        "Elemento faltante: .payment-section",
+        "Elemento faltante: .order-summary",
+        "Elemento faltante: .payment-section",
+        "Elemento faltante: .order-summary",
+        "Elemento faltante: .payment-section",
+        "Elemento faltante: .order-summary",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: BUTTON",
+        "Elemento clickeable muy pequeño: BUTTON",
+        "Elemento clickeable muy pequeño: BUTTON",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: BUTTON",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: BUTTON",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: A",
+        "Elemento clickeable muy pequeño: BUTTON",
+        "Elemento clickeable muy pequeño: BUTTON"
+      ],
+      "status": "failed"
+    }
+  ],
+  "summary": {
+    "total": 6,
+    "passed": 0,
+    "failed": 6
+  }
+}

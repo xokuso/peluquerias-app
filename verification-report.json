@@ -1,0 +1,57 @@
+{
+  "timestamp": "2025-11-16T21:08:41.300Z",
+  "overall": {
+    "homepage": true,
+    "ofertas": false,
+    "checkout": false,
+    "apis": false,
+    "success": true,
+    "responsive": false
+  },
+  "details": {
+    "homepage": {
+      "success": true,
+      "title": "Web para Peluquería Profesional | Desde 199€ | PeluqueríasPRO",
+      "elements": {
+        "header": false,
+        "footer": true,
+        "h1": true
+      },
+      "errors": [
+        "Failed to load resource: the server responded with a status of 400 (Bad Request)",
+        "Failed to load resource: the server responded with a status of 400 (Bad Request)"
+      ]
+    },
+    "ofertas": {
+      "success": false,
+      "templatesVisible": false,
+      "formExists": false,
+      "templateSelected": false,
+      "formFilled": false
+    },
+    "checkout": null,
+    "apis": {
+      "/api/templates": {
+        "status": 200,
+        "success": true
+      },
+      "/api/create-payment-intent": {
+        "status": 400,
+        "success": false
+      },
+      "/api/simplified-checkout": {
+        "status": 200,
+        "success": true
+      }
+    },
+    "success": {
+      "pageLoads": true,
+      "hasMessage": true
+    },
+    "responsive": {
+      "mobileNavExists": false,
+      "screenshotsTaken": true
+    },
+    "errors": []
+  }
+}

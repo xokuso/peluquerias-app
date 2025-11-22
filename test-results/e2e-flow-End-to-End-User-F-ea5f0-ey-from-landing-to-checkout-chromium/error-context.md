@@ -1,0 +1,306 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - link "Saltar al contenido principal" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - generic [ref=e4]:
+    - navigation [ref=e7]:
+      - link "Inicio" [ref=e8] [cursor=pointer]:
+        - /url: /
+      - img [ref=e9]
+      - generic [ref=e11]: Plantillas
+    - generic [ref=e12]:
+      - generic [ref=e13]:
+        - heading "Elige Tu Plantilla Perfecta" [level=1] [ref=e14]
+        - paragraph [ref=e15]: Diseños únicos especializados en peluquerías. Elige tu estilo y personalízalo.
+        - generic [ref=e16]:
+          - generic:
+            - img
+          - textbox "Buscar por nombre o características..." [ref=e17]
+      - paragraph [ref=e20]: 6 plantillas encontradas
+      - generic [ref=e21]:
+        - generic [ref=e24]:
+          - generic [ref=e25]:
+            - heading "Filtros" [level=3] [ref=e26]
+            - generic [ref=e27]: 6 resultados
+          - generic [ref=e28]:
+            - heading "Por Estilo (0 seleccionados)" [level=4] [ref=e29]:
+              - text: Por Estilo
+              - generic [ref=e30]: (0 seleccionados)
+            - generic [ref=e31]:
+              - generic [ref=e32] [cursor=pointer]:
+                - generic [ref=e34]: ✨
+                - generic [ref=e35]: Elegante
+                - checkbox "✨ Elegante" [ref=e36]
+              - generic [ref=e37] [cursor=pointer]:
+                - generic [ref=e39]: 🔥
+                - generic [ref=e40]: Moderno
+                - checkbox "🔥 Moderno" [ref=e41]
+              - generic [ref=e42] [cursor=pointer]:
+                - generic [ref=e44]: 💅
+                - generic [ref=e45]: Femenino
+                - checkbox "💅 Femenino" [ref=e46]
+              - generic [ref=e47] [cursor=pointer]:
+                - generic [ref=e49]: 💪
+                - generic [ref=e50]: Masculino
+                - checkbox "💪 Masculino" [ref=e51]
+              - generic [ref=e52] [cursor=pointer]:
+                - generic [ref=e54]: 🏛️
+                - generic [ref=e55]: Clásico
+                - checkbox "🏛️ Clásico" [ref=e56]
+              - generic [ref=e57] [cursor=pointer]:
+                - generic [ref=e59]: 🚀
+                - generic [ref=e60]: Vanguardista
+                - checkbox "🚀 Vanguardista" [ref=e61]
+          - generic [ref=e62]:
+            - heading "Por Color (0 seleccionados)" [level=4] [ref=e63]:
+              - text: Por Color
+              - generic [ref=e64]: (0 seleccionados)
+            - generic [ref=e65]:
+              - generic [ref=e66] [cursor=pointer]:
+                - generic [ref=e69]: Dorados
+                - checkbox "Dorados" [ref=e70]
+              - generic [ref=e71] [cursor=pointer]:
+                - generic [ref=e74]: Naranjas
+                - checkbox "Naranjas" [ref=e75]
+              - generic [ref=e76] [cursor=pointer]:
+                - generic [ref=e79]: Negros
+                - checkbox "Negros" [ref=e80]
+              - generic [ref=e81] [cursor=pointer]:
+                - generic [ref=e84]: Rosados
+                - checkbox "Rosados" [ref=e85]
+              - generic [ref=e86] [cursor=pointer]:
+                - generic [ref=e89]: Verdes
+                - checkbox "Verdes" [ref=e90]
+              - generic [ref=e91] [cursor=pointer]:
+                - generic [ref=e94]: Multicolor
+                - checkbox "Multicolor" [ref=e95]
+          - generic [ref=e96]:
+            - heading "Por Funcionalidad (0 seleccionados)" [level=4] [ref=e97]:
+              - text: Por Funcionalidad
+              - generic [ref=e98]: (0 seleccionados)
+            - generic [ref=e99]:
+              - generic [ref=e100] [cursor=pointer]:
+                - generic [ref=e102]:
+                  - generic [ref=e103]: Reservas Online
+                  - generic [ref=e104]: Sistema de citas integrado
+                - checkbox "Reservas Online Sistema de citas integrado" [ref=e105]
+              - generic [ref=e106] [cursor=pointer]:
+                - generic [ref=e108]:
+                  - generic [ref=e109]: Galería Avanzada
+                  - generic [ref=e110]: Portafolio de trabajos
+                - checkbox "Galería Avanzada Portafolio de trabajos" [ref=e111]
+              - generic [ref=e112] [cursor=pointer]:
+                - generic [ref=e114]:
+                  - generic [ref=e115]: Blog
+                  - generic [ref=e116]: Sistema de contenido
+                - checkbox "Blog Sistema de contenido" [ref=e117]
+              - generic [ref=e118] [cursor=pointer]:
+                - generic [ref=e120]:
+                  - generic [ref=e121]: E-commerce
+                  - generic [ref=e122]: Tienda online integrada
+                - checkbox "E-commerce Tienda online integrada" [ref=e123]
+        - generic [ref=e125]:
+          - generic [ref=e126]:
+            - generic [ref=e127]:
+              - img "Preview de Elegance Salon" [ref=e128]
+              - button "Ver Demo" [ref=e131] [cursor=pointer]:
+                - img [ref=e132]
+                - generic [ref=e135]: Ver Demo
+              - generic [ref=e136]:
+                - generic [ref=e137]:
+                  - img [ref=e138]
+                  - generic [ref=e140]: Más Popular
+                - generic [ref=e141]: Recomendado
+              - generic [ref=e143]: ✨
+            - generic [ref=e144]:
+              - generic [ref=e145]:
+                - heading "Elegance Salon" [level=3] [ref=e146]
+                - paragraph [ref=e147]: Para peluquerías de alta gama que buscan sofisticación
+                - paragraph [ref=e148]: Diseño minimalista con colores dorados y blancos, perfecto para salones de alta gama
+              - generic [ref=e149]:
+                - generic [ref=e151]:
+                  - generic [ref=e152]: 🖼️
+                  - generic [ref=e153]: galeria
+                - generic [ref=e155]: "Colores:"
+              - generic [ref=e159]:
+                - img [ref=e160]
+                - generic [ref=e165]: 12+ salones elegantes
+              - generic [ref=e166]:
+                - button "Elegir Esta" [ref=e167] [cursor=pointer]:
+                  - generic [ref=e168]: Elegir Esta
+                  - img [ref=e169]
+                - button "Ver Demo" [ref=e171] [cursor=pointer]:
+                  - img [ref=e172]
+                  - generic [ref=e175]: Ver Demo
+          - generic [ref=e176]:
+            - generic [ref=e177]:
+              - img "Preview de Modern Cut" [ref=e178]
+              - button "Ver Demo" [ref=e181] [cursor=pointer]:
+                - img [ref=e182]
+                - generic [ref=e185]: Ver Demo
+              - generic [ref=e186]:
+                - generic [ref=e187]: Nuevo
+                - generic [ref=e188]: Tendencia
+              - generic [ref=e190]: 🔥
+            - generic [ref=e191]:
+              - generic [ref=e192]:
+                - heading "Modern Cut" [level=3] [ref=e193]
+                - paragraph [ref=e194]: Diseño urbano perfecto para clientela joven
+                - paragraph [ref=e195]: Diseño moderno con colores negros y naranjas, incluye booking online y portfolio
+              - generic [ref=e196]:
+                - generic [ref=e198]:
+                  - generic [ref=e199]: 📅
+                  - generic [ref=e200]: reservas
+                - generic [ref=e202]: "Colores:"
+              - generic [ref=e206]:
+                - img [ref=e207]
+                - generic [ref=e212]: 25+ salones modernos
+              - generic [ref=e213]:
+                - button "Elegir Esta" [ref=e214] [cursor=pointer]:
+                  - generic [ref=e215]: Elegir Esta
+                  - img [ref=e216]
+                - button "Ver Demo" [ref=e218] [cursor=pointer]:
+                  - img [ref=e219]
+                  - generic [ref=e222]: Ver Demo
+          - generic [ref=e223]:
+            - generic [ref=e224]:
+              - img "Preview de Beauty Studio" [ref=e225]
+              - button "Ver Demo" [ref=e228] [cursor=pointer]:
+                - img [ref=e229]
+                - generic [ref=e232]: Ver Demo
+              - generic [ref=e234]: 💅
+            - generic [ref=e235]:
+              - generic [ref=e236]:
+                - heading "Beauty Studio" [level=3] [ref=e237]
+                - paragraph [ref=e238]: Especializada en tratamientos de belleza y estética
+                - paragraph [ref=e239]: Estilo femenino con rosados y dorados, enfocado en tratamientos de belleza
+              - generic [ref=e240]:
+                - generic [ref=e241]:
+                  - generic [ref=e242]:
+                    - generic [ref=e243]: 📝
+                    - generic [ref=e244]: blog
+                  - generic [ref=e245]:
+                    - generic [ref=e246]: 🖼️
+                    - generic [ref=e247]: galeria
+                - generic [ref=e249]: "Colores:"
+              - generic [ref=e253]:
+                - img [ref=e254]
+                - generic [ref=e259]: 18+ estudios de belleza
+              - generic [ref=e260]:
+                - button "Elegir Esta" [ref=e261] [cursor=pointer]:
+                  - generic [ref=e262]: Elegir Esta
+                  - img [ref=e263]
+                - button "Ver Demo" [ref=e265] [cursor=pointer]:
+                  - img [ref=e266]
+                  - generic [ref=e269]: Ver Demo
+          - generic [ref=e270]:
+            - generic [ref=e271]:
+              - img "Preview de Urban Barber" [ref=e272]
+              - button "Ver Demo" [ref=e275] [cursor=pointer]:
+                - img [ref=e276]
+                - generic [ref=e279]: Ver Demo
+              - generic [ref=e281]: Recomendado
+              - generic [ref=e283]: 💪
+            - generic [ref=e284]:
+              - generic [ref=e285]:
+                - heading "Urban Barber" [level=3] [ref=e286]
+                - paragraph [ref=e287]: Para barberías modernas con estilo tradicional
+                - paragraph [ref=e288]: Diseño masculino con colores oscuros y verdes, especializado en barbería
+              - generic [ref=e289]:
+                - generic [ref=e290]:
+                  - generic [ref=e291]:
+                    - generic [ref=e292]: 📅
+                    - generic [ref=e293]: reservas
+                  - generic [ref=e294]:
+                    - generic [ref=e295]: 🛒
+                    - generic [ref=e296]: ecommerce
+                - generic [ref=e298]: "Colores:"
+              - generic [ref=e302]:
+                - img [ref=e303]
+                - generic [ref=e308]: 15+ barberías urbanas
+              - generic [ref=e309]:
+                - button "Elegir Esta" [ref=e310] [cursor=pointer]:
+                  - generic [ref=e311]: Elegir Esta
+                  - img [ref=e312]
+                - button "Ver Demo" [ref=e314] [cursor=pointer]:
+                  - img [ref=e315]
+                  - generic [ref=e318]: Ver Demo
+          - generic [ref=e319]:
+            - generic [ref=e320]:
+              - img "Preview de Classic Hair" [ref=e321]
+              - button "Ver Demo" [ref=e324] [cursor=pointer]:
+                - img [ref=e325]
+                - generic [ref=e328]: Ver Demo
+              - generic [ref=e330]: 🏛️
+            - generic [ref=e331]:
+              - generic [ref=e332]:
+                - heading "Classic Hair" [level=3] [ref=e333]
+                - paragraph [ref=e334]: Elegancia atemporal para peluquerías familiares
+                - paragraph [ref=e335]: Diseño clásico con beiges y marrones, tradición y elegancia atemporal
+              - generic [ref=e336]:
+                - generic [ref=e338]:
+                  - generic [ref=e339]: 🖼️
+                  - generic [ref=e340]: galeria
+                - generic [ref=e342]: "Colores:"
+              - generic [ref=e346]:
+                - img [ref=e347]
+                - generic [ref=e352]: 10+ salones tradicionales
+              - generic [ref=e353]:
+                - button "Elegir Esta" [ref=e354] [cursor=pointer]:
+                  - generic [ref=e355]: Elegir Esta
+                  - img [ref=e356]
+                - button "Ver Demo" [ref=e358] [cursor=pointer]:
+                  - img [ref=e359]
+                  - generic [ref=e362]: Ver Demo
+          - generic [ref=e363]:
+            - generic [ref=e364]:
+              - img "Preview de Trendy Style" [ref=e365]
+              - button "Ver Demo" [ref=e368] [cursor=pointer]:
+                - img [ref=e369]
+                - generic [ref=e372]: Ver Demo
+              - generic [ref=e373]:
+                - generic [ref=e374]: Nuevo
+                - generic [ref=e375]: Tendencia
+              - generic [ref=e377]: 🚀
+            - generic [ref=e378]:
+              - generic [ref=e379]:
+                - heading "Trendy Style" [level=3] [ref=e380]
+                - paragraph [ref=e381]: Para estilistas creativos y experimentales
+                - paragraph [ref=e382]: Diseño vanguardista con colores vibrantes y animaciones creativas
+              - generic [ref=e383]:
+                - generic [ref=e384]:
+                  - generic [ref=e385]:
+                    - generic [ref=e386]: 📅
+                    - generic [ref=e387]: reservas
+                  - generic [ref=e388]:
+                    - generic [ref=e389]: 🖼️
+                    - generic [ref=e390]: galeria
+                  - generic [ref=e391]:
+                    - generic [ref=e392]: 📝
+                    - generic [ref=e393]: blog
+                  - generic [ref=e394]:
+                    - generic [ref=e395]: 🛒
+                    - generic [ref=e396]: ecommerce
+                - generic [ref=e398]: "Colores:"
+              - generic [ref=e402]:
+                - img [ref=e403]
+                - generic [ref=e408]: 8+ salones vanguardistas
+              - generic [ref=e409]:
+                - button "Elegir Esta" [ref=e410] [cursor=pointer]:
+                  - generic [ref=e411]: Elegir Esta
+                  - img [ref=e412]
+                - button "Ver Demo" [ref=e414] [cursor=pointer]:
+                  - img [ref=e415]
+                  - generic [ref=e418]: Ver Demo
+  - generic [ref=e420]:
+    - paragraph [ref=e422]:
+      - text: Utilizamos cookies para mejorar tu experiencia y analizar el tráfico de nuestro sitio.
+      - link "Política de privacidad" [ref=e423] [cursor=pointer]:
+        - /url: /privacy
+    - generic [ref=e424]:
+      - button "Rechazar" [ref=e425] [cursor=pointer]
+      - button "Aceptar" [ref=e426] [cursor=pointer]
+  - alert [ref=e427]: Plantillas Web para Peluquerías | Diseños Profesionales | PeluqueríasPRO
+```

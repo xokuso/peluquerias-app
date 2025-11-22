@@ -1,0 +1,659 @@
+{
+  "Desktop-/": {
+    "url": "http://localhost:3002/",
+    "device": {
+      "name": "Desktop",
+      "width": 1920,
+      "height": 1080
+    },
+    "screenshot": "visual-validation-screenshots/Desktop-home.png",
+    "validations": [
+      {
+        "test": "Professional Color Scheme",
+        "passed": false,
+        "details": {
+          "amberElements": 64,
+          "emeraldElements": 49,
+          "forbiddenElements": 22
+        }
+      },
+      {
+        "test": "Layout and Content Positioning",
+        "passed": false,
+        "details": {
+          "stretchedElements": 7,
+          "hasProperPadding": true,
+          "viewportWidth": 1920
+        }
+      },
+      {
+        "test": "Glassmorphism Shadows",
+        "passed": false,
+        "details": {
+          "glassElements": 173,
+          "shadowElements": 105,
+          "brokenShadows": 9
+        }
+      },
+      {
+        "test": "Navigation Links",
+        "passed": false,
+        "details": [
+          {
+            "link": "/pricing",
+            "isVisible": true
+          },
+          {
+            "link": "/contact",
+            "isVisible": false
+          },
+          {
+            "link": "/templates",
+            "isVisible": true
+          }
+        ]
+      },
+      {
+        "test": "Form Elements and Focus States",
+        "passed": true,
+        "details": {
+          "inputElements": 0,
+          "amberFocusElements": 2
+        }
+      },
+      {
+        "test": "Professional B2B Appearance",
+        "passed": false,
+        "details": {
+          "professionalElements": 53,
+          "amateurElements": 10,
+          "professionalTypography": 159
+        }
+      }
+    ]
+  },
+  "Desktop-/pricing": {
+    "url": "http://localhost:3002/pricing",
+    "device": {
+      "name": "Desktop",
+      "width": 1920,
+      "height": 1080
+    },
+    "screenshot": "visual-validation-screenshots/Desktop-homepricing.png",
+    "validations": [
+      {
+        "test": "Professional Color Scheme",
+        "passed": true,
+        "details": {
+          "amberElements": 45,
+          "emeraldElements": 16,
+          "forbiddenElements": 0
+        }
+      },
+      {
+        "test": "Layout and Content Positioning",
+        "passed": false,
+        "details": {
+          "stretchedElements": 1,
+          "hasProperPadding": true,
+          "viewportWidth": 1920
+        }
+      },
+      {
+        "test": "Glassmorphism Shadows",
+        "passed": false,
+        "details": {
+          "glassElements": 14,
+          "shadowElements": 11,
+          "brokenShadows": 8
+        }
+      },
+      {
+        "test": "Navigation Links",
+        "passed": false,
+        "details": [
+          {
+            "link": "/pricing",
+            "isVisible": true
+          },
+          {
+            "link": "/contact",
+            "isVisible": false
+          },
+          {
+            "link": "/templates",
+            "isVisible": true
+          }
+        ]
+      },
+      {
+        "test": "Form Elements and Focus States",
+        "passed": true,
+        "details": {
+          "inputElements": 0,
+          "amberFocusElements": 0
+        }
+      },
+      {
+        "test": "Professional B2B Appearance",
+        "passed": true,
+        "details": {
+          "professionalElements": 11,
+          "amateurElements": 0,
+          "professionalTypography": 17
+        }
+      }
+    ]
+  },
+  "Desktop-/contact": {
+    "url": "http://localhost:3002/contact",
+    "device": {
+      "name": "Desktop",
+      "width": 1920,
+      "height": 1080
+    },
+    "screenshot": "visual-validation-screenshots/Desktop-homecontact.png",
+    "validations": [
+      {
+        "test": "Professional Color Scheme",
+        "passed": true,
+        "details": {
+          "amberElements": 31,
+          "emeraldElements": 16,
+          "forbiddenElements": 0
+        }
+      },
+      {
+        "test": "Layout and Content Positioning",
+        "passed": false,
+        "details": {
+          "stretchedElements": 1,
+          "hasProperPadding": true,
+          "viewportWidth": 1920
+        }
+      },
+      {
+        "test": "Glassmorphism Shadows",
+        "passed": false,
+        "details": {
+          "glassElements": 19,
+          "shadowElements": 10,
+          "brokenShadows": 8
+        }
+      },
+      {
+        "test": "Navigation Links",
+        "passed": false,
+        "details": [
+          {
+            "link": "/pricing",
+            "isVisible": true
+          },
+          {
+            "link": "/contact",
+            "isVisible": false
+          },
+          {
+            "link": "/templates",
+            "isVisible": true
+          }
+        ]
+      },
+      {
+        "test": "Form Elements and Focus States",
+        "passed": true,
+        "details": {
+          "inputElements": 7,
+          "amberFocusElements": 8
+        }
+      },
+      {
+        "test": "Professional B2B Appearance",
+        "passed": true,
+        "details": {
+          "professionalElements": 12,
+          "amateurElements": 0,
+          "professionalTypography": 24
+        }
+      }
+    ]
+  },
+  "Tablet-/": {
+    "url": "http://localhost:3002/",
+    "device": {
+      "name": "Tablet",
+      "width": 768,
+      "height": 1024
+    },
+    "screenshot": "visual-validation-screenshots/Tablet-home.png",
+    "validations": [
+      {
+        "test": "Professional Color Scheme",
+        "passed": false,
+        "details": {
+          "amberElements": 64,
+          "emeraldElements": 49,
+          "forbiddenElements": 22
+        }
+      },
+      {
+        "test": "Layout and Content Positioning",
+        "passed": false,
+        "details": {
+          "stretchedElements": 7,
+          "hasProperPadding": true,
+          "viewportWidth": 768
+        }
+      },
+      {
+        "test": "Glassmorphism Shadows",
+        "passed": false,
+        "details": {
+          "glassElements": 173,
+          "shadowElements": 105,
+          "brokenShadows": 9
+        }
+      },
+      {
+        "test": "Navigation Links",
+        "passed": false,
+        "details": [
+          {
+            "link": "/pricing",
+            "isVisible": true
+          },
+          {
+            "link": "/contact",
+            "isVisible": false
+          },
+          {
+            "link": "/templates",
+            "isVisible": true
+          }
+        ]
+      },
+      {
+        "test": "Form Elements and Focus States",
+        "passed": true,
+        "details": {
+          "inputElements": 0,
+          "amberFocusElements": 2
+        }
+      },
+      {
+        "test": "Professional B2B Appearance",
+        "passed": false,
+        "details": {
+          "professionalElements": 53,
+          "amateurElements": 6,
+          "professionalTypography": 158
+        }
+      }
+    ]
+  },
+  "Tablet-/pricing": {
+    "url": "http://localhost:3002/pricing",
+    "device": {
+      "name": "Tablet",
+      "width": 768,
+      "height": 1024
+    },
+    "screenshot": "visual-validation-screenshots/Tablet-homepricing.png",
+    "validations": [
+      {
+        "test": "Professional Color Scheme",
+        "passed": true,
+        "details": {
+          "amberElements": 45,
+          "emeraldElements": 16,
+          "forbiddenElements": 0
+        }
+      },
+      {
+        "test": "Layout and Content Positioning",
+        "passed": false,
+        "details": {
+          "stretchedElements": 1,
+          "hasProperPadding": true,
+          "viewportWidth": 768
+        }
+      },
+      {
+        "test": "Glassmorphism Shadows",
+        "passed": false,
+        "details": {
+          "glassElements": 14,
+          "shadowElements": 11,
+          "brokenShadows": 8
+        }
+      },
+      {
+        "test": "Navigation Links",
+        "passed": false,
+        "details": [
+          {
+            "link": "/pricing",
+            "isVisible": true
+          },
+          {
+            "link": "/contact",
+            "isVisible": false
+          },
+          {
+            "link": "/templates",
+            "isVisible": true
+          }
+        ]
+      },
+      {
+        "test": "Form Elements and Focus States",
+        "passed": true,
+        "details": {
+          "inputElements": 0,
+          "amberFocusElements": 0
+        }
+      },
+      {
+        "test": "Professional B2B Appearance",
+        "passed": true,
+        "details": {
+          "professionalElements": 11,
+          "amateurElements": 0,
+          "professionalTypography": 17
+        }
+      }
+    ]
+  },
+  "Tablet-/contact": {
+    "url": "http://localhost:3002/contact",
+    "device": {
+      "name": "Tablet",
+      "width": 768,
+      "height": 1024
+    },
+    "screenshot": "visual-validation-screenshots/Tablet-homecontact.png",
+    "validations": [
+      {
+        "test": "Professional Color Scheme",
+        "passed": true,
+        "details": {
+          "amberElements": 31,
+          "emeraldElements": 16,
+          "forbiddenElements": 0
+        }
+      },
+      {
+        "test": "Layout and Content Positioning",
+        "passed": false,
+        "details": {
+          "stretchedElements": 1,
+          "hasProperPadding": true,
+          "viewportWidth": 768
+        }
+      },
+      {
+        "test": "Glassmorphism Shadows",
+        "passed": false,
+        "details": {
+          "glassElements": 19,
+          "shadowElements": 10,
+          "brokenShadows": 8
+        }
+      },
+      {
+        "test": "Navigation Links",
+        "passed": false,
+        "details": [
+          {
+            "link": "/pricing",
+            "isVisible": true
+          },
+          {
+            "link": "/contact",
+            "isVisible": false
+          },
+          {
+            "link": "/templates",
+            "isVisible": true
+          }
+        ]
+      },
+      {
+        "test": "Form Elements and Focus States",
+        "passed": true,
+        "details": {
+          "inputElements": 7,
+          "amberFocusElements": 8
+        }
+      },
+      {
+        "test": "Professional B2B Appearance",
+        "passed": true,
+        "details": {
+          "professionalElements": 12,
+          "amateurElements": 0,
+          "professionalTypography": 24
+        }
+      }
+    ]
+  },
+  "Mobile-/": {
+    "url": "http://localhost:3002/",
+    "device": {
+      "name": "Mobile",
+      "width": 375,
+      "height": 667
+    },
+    "screenshot": "visual-validation-screenshots/Mobile-home.png",
+    "validations": [
+      {
+        "test": "Professional Color Scheme",
+        "passed": false,
+        "details": {
+          "amberElements": 64,
+          "emeraldElements": 49,
+          "forbiddenElements": 22
+        }
+      },
+      {
+        "test": "Layout and Content Positioning",
+        "passed": false,
+        "details": {
+          "stretchedElements": 7,
+          "hasProperPadding": true,
+          "viewportWidth": 375
+        }
+      },
+      {
+        "test": "Glassmorphism Shadows",
+        "passed": false,
+        "details": {
+          "glassElements": 173,
+          "shadowElements": 105,
+          "brokenShadows": 9
+        }
+      },
+      {
+        "test": "Navigation Links",
+        "passed": false,
+        "details": [
+          {
+            "link": "/pricing",
+            "isVisible": true
+          },
+          {
+            "link": "/contact",
+            "isVisible": false
+          },
+          {
+            "link": "/templates",
+            "isVisible": true
+          }
+        ]
+      },
+      {
+        "test": "Form Elements and Focus States",
+        "passed": true,
+        "details": {
+          "inputElements": 0,
+          "amberFocusElements": 7
+        }
+      },
+      {
+        "test": "Professional B2B Appearance",
+        "passed": false,
+        "details": {
+          "professionalElements": 57,
+          "amateurElements": 6,
+          "professionalTypography": 149
+        }
+      }
+    ]
+  },
+  "Mobile-/pricing": {
+    "url": "http://localhost:3002/pricing",
+    "device": {
+      "name": "Mobile",
+      "width": 375,
+      "height": 667
+    },
+    "screenshot": "visual-validation-screenshots/Mobile-homepricing.png",
+    "validations": [
+      {
+        "test": "Professional Color Scheme",
+        "passed": true,
+        "details": {
+          "amberElements": 45,
+          "emeraldElements": 16,
+          "forbiddenElements": 0
+        }
+      },
+      {
+        "test": "Layout and Content Positioning",
+        "passed": false,
+        "details": {
+          "stretchedElements": 1,
+          "hasProperPadding": true,
+          "viewportWidth": 375
+        }
+      },
+      {
+        "test": "Glassmorphism Shadows",
+        "passed": false,
+        "details": {
+          "glassElements": 14,
+          "shadowElements": 11,
+          "brokenShadows": 8
+        }
+      },
+      {
+        "test": "Navigation Links",
+        "passed": false,
+        "details": [
+          {
+            "link": "/pricing",
+            "isVisible": true
+          },
+          {
+            "link": "/contact",
+            "isVisible": false
+          },
+          {
+            "link": "/templates",
+            "isVisible": true
+          }
+        ]
+      },
+      {
+        "test": "Form Elements and Focus States",
+        "passed": true,
+        "details": {
+          "inputElements": 0,
+          "amberFocusElements": 0
+        }
+      },
+      {
+        "test": "Professional B2B Appearance",
+        "passed": true,
+        "details": {
+          "professionalElements": 11,
+          "amateurElements": 0,
+          "professionalTypography": 17
+        }
+      }
+    ]
+  },
+  "Mobile-/contact": {
+    "url": "http://localhost:3002/contact",
+    "device": {
+      "name": "Mobile",
+      "width": 375,
+      "height": 667
+    },
+    "screenshot": "visual-validation-screenshots/Mobile-homecontact.png",
+    "validations": [
+      {
+        "test": "Professional Color Scheme",
+        "passed": true,
+        "details": {
+          "amberElements": 31,
+          "emeraldElements": 16,
+          "forbiddenElements": 0
+        }
+      },
+      {
+        "test": "Layout and Content Positioning",
+        "passed": false,
+        "details": {
+          "stretchedElements": 1,
+          "hasProperPadding": true,
+          "viewportWidth": 375
+        }
+      },
+      {
+        "test": "Glassmorphism Shadows",
+        "passed": false,
+        "details": {
+          "glassElements": 19,
+          "shadowElements": 10,
+          "brokenShadows": 8
+        }
+      },
+      {
+        "test": "Navigation Links",
+        "passed": false,
+        "details": [
+          {
+            "link": "/pricing",
+            "isVisible": true
+          },
+          {
+            "link": "/contact",
+            "isVisible": false
+          },
+          {
+            "link": "/templates",
+            "isVisible": true
+          }
+        ]
+      },
+      {
+        "test": "Form Elements and Focus States",
+        "passed": true,
+        "details": {
+          "inputElements": 7,
+          "amberFocusElements": 8
+        }
+      },
+      {
+        "test": "Professional B2B Appearance",
+        "passed": true,
+        "details": {
+          "professionalElements": 12,
+          "amateurElements": 0,
+          "professionalTypography": 24
+        }
+      }
+    ]
+  }
+}

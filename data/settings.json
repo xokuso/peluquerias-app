@@ -1,0 +1,42 @@
+{
+  "siteName": "Claude Codefy",
+  "siteDescription": "Crea la web de tu peluquería en 48h. Diseño profesional, reservas online, gestión de citas.",
+  "siteUrl": "https://claudecodefy.com",
+  "contactEmail": "alex@claudecodefy.com",
+  "supportEmail": "alex@claudecodefy.com",
+  "maintenanceMode": false,
+  "allowRegistrations": true,
+  "emailNotifications": true,
+  "smsNotifications": false,
+  "stripePublishableKey": "",
+  "stripeSecretKey": "",
+  "domainPricing": [
+    {
+      "extension": ".es",
+      "price": 12.99,
+      "discount": 0,
+      "popular": true
+    },
+    {
+      "extension": ".com",
+      "price": 15.99,
+      "discount": 10,
+      "popular": false
+    },
+    {
+      "extension": ".org",
+      "price": 14.99,
+      "discount": 0,
+      "popular": false
+    }
+  ],
+  "templatePricing": {
+    "offerPrice": 1,
+    "originalPrice": 799
+  },
+  "theme": {
+    "primaryColor": "#f97316",
+    "secondaryColor": "#7c3aed",
+    "accentColor": "#06b6d4"
+  }
+}

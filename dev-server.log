@@ -1,0 +1,26 @@
+
+> peluquerias-app@0.1.0 dev
+> next dev
+
+  ▲ Next.js 14.2.33
+  - Local:        http://localhost:3000
+  - Environments: .env.local, .env
+
+ ✓ Starting...
+ ✓ Ready in 1099ms
+ ✓ Compiled /src/middleware in 170ms (175 modules)
+ ✓ Compiled in 99ms (175 modules)
+ ✓ Compiled /api/stripe/session/[sessionId] in 284ms (264 modules)
+ GET /api/stripe/session/cs_live_a1gos7nqvQsfupPrFsW7xbSwXQSueCLPCksDpq1lrdDxqEDq12xVpyZNN1 200 in 830ms
+ ✓ Compiled in 87ms (175 modules)
+ ○ Compiling /checkout/success ...
+ ✓ Compiled /checkout/success in 2.4s (1476 modules)
+ GET /checkout/success?session_id=cs_live_a1gos7nqvQsfupPrFsW7xbSwXQSueCLPCksDpq1lrdDxqEDq12xVpyZNN1 200 in 2611ms
+ ✓ Compiled in 203ms (723 modules)
+ GET /checkout/success?session_id=cs_live_a1gos7nqvQsfupPrFsW7xbSwXQSueCLPCksDpq1lrdDxqEDq12xVpyZNN1 200 in 17ms
+ ✓ Compiled in 97ms (175 modules)
+ ✓ Compiled in 78ms (175 modules)
+ ✓ Compiled /api/stripe/webhooks in 157ms (275 modules)
+❌ Webhook signature verification failed: Unable to extract timestamp and signatures from header
+ POST /api/stripe/webhooks 400 in 243ms
+[?25h

@@ -1,0 +1,1243 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+// NextAuth.js schema
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  emailVerified DateTime?
+  password      String?   // For credentials provider
+  image         String?
+  accounts      Account[]
+  sessions      Session[]
+  role          UserRole  @default(CLIENT)
+
+  // Datos específicos del negocio de peluquerías
+  salonName     String?
+  phone         String?
+  city          String?
+  address       String?
+  website       String?
+  businessType  BusinessType @default(SALON)
+
+  // Configuración de cuenta
+  hasCompletedOnboarding Boolean @default(false)
+  subscriptionStatus     String? // Para futuras suscripciones
+  isActive              Boolean @default(true)
+  lastLogin             DateTime?
+  loginAttempts         Int     @default(0)
+  lockUntil             DateTime?
+
+  // Relaciones
+  orders          Order[]           @relation("UserOrders")
+  photos          Photo[]           @relation("UserPhotos")
+  refreshTokens   RefreshToken[]
+  autoLoginTokens AutoLoginToken[]
+  businessContent BusinessContent?  @relation("UserContent")
+  notifications   Notification[]
+  payments        Payment[]
+  supportTickets  SupportTicket[]
+
+  // Analytics relationships
+  analyticsSessions UserSession[]
+
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  @@index([email])
+  @@index([role])
+}
+
+// Refresh token for enhanced security
+model RefreshToken {
+  id        String   @id @default(cuid())
+  token     String   @unique
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+  @@index([token])
+}
+
+// Auto-login tokens for post-payment authentication
+model AutoLoginToken {
+  id        String   @id @default(cuid())
+  token     String   @unique
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  email     String   // Store email for additional validation
+  sessionId String   // Stripe session ID for fast lookups
+  used      Boolean  @default(false) // Token can only be used once
+  expiresAt DateTime // Token expires after 15 minutes
+  metadata  Json?    // Additional data like orderId, source, etc.
+  createdAt DateTime @default(now())
+  usedAt    DateTime? // Track when the token was consumed
+
+  @@index([userId])
+  @@index([token])
+  @@index([email])
+  @@index([sessionId])
+  @@index([used])
+  @@index([expiresAt])
+  @@unique([sessionId, used]) // Ensure one valid token per session
+}
+
+// Stripe webhook event tracking for idempotency
+model StripeWebhookEvent {
+  id          String   @id @default(cuid())
+  eventId     String   @unique // Stripe event ID
+  eventType   String   // checkout.session.completed, etc.
+  processedAt DateTime @default(now())
+  success     Boolean  @default(true)
+  errorMessage String? // Error details if processing failed
+  retryCount  Int      @default(0)
+  metadata    Json?    // Additional processing metadata
+
+  @@index([eventId])
+  @@index([eventType])
+  @@index([processedAt])
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+// Hair salon business models
+model Template {
+  id          String   @id @default(cuid())
+  name        String
+  description String
+  price       Float
+  features    Json     @default("[]")
+  preview     String
+  category    TemplateCategory
+  active      Boolean  @default(true)
+  orders      Order[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Order {
+  id              String      @id @default(cuid())
+  salonName       String
+  ownerName       String
+  email           String
+  phone           String
+  address         String?
+  domain          String      @unique
+  domainExtension String?     // Store the selected extension (.es, .com, etc.)
+  domainPrice     Float?      // Store the actual domain price
+  domainUserPrice Float?      // Price user pays after discount
+  templateId      String
+  template        Template    @relation(fields: [templateId], references: [id])
+  total           Float
+  status          OrderStatus @default(PENDING)
+  stripeSessionId String?     @unique
+  paymentIntentId String?     @unique
+
+  // Setup progress tracking
+  setupStep       SetupStep   @default(DOMAIN_SELECTION)
+  setupCompleted  Boolean     @default(false)
+
+  // Admin notes and project management
+  notes           String?     // Admin notes about the order/project
+
+  // Relación con usuario (opcional - para órdenes de usuarios registrados)
+  userId          String?
+  user            User?       @relation("UserOrders", fields: [userId], references: [id], onDelete: SetNull)
+
+  // Photo uploads relationship
+  photos          Photo[]          @relation("OrderPhotos")
+
+  // Business content relationship
+  businessContent BusinessContent? @relation("OrderContent")
+
+  // Project relationship
+  project         Project?
+
+  // Payment relationship
+  payments        Payment[]
+
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+  completedAt     DateTime?
+
+  @@index([email])
+  @@index([status])
+  @@index([createdAt])
+  @@index([userId])
+  @@index([setupStep])
+}
+
+model FAQ {
+  id       String @id @default(cuid())
+  question String
+  answer   String
+  category String
+  order    Int    @default(0)
+  active   Boolean @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Testimonial {
+  id        String   @id @default(cuid())
+  name      String
+  salon     String
+  rating    Int
+  comment   String
+  avatar    String?
+  active    Boolean  @default(true)
+  featured  Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model ContactMessage {
+  id        String            @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  subject   String?
+  message   String
+  status    ContactStatus     @default(UNREAD)
+  createdAt DateTime          @default(now())
+  updatedAt DateTime          @updatedAt
+
+  @@index([status])
+  @@index([createdAt])
+}
+
+// Photo management for client uploads
+model Photo {
+  id          String      @id @default(cuid())
+  filename    String      // Original filename
+  storedName  String      @unique // Unique filename for storage
+  originalUrl String      // Full URL to original image
+  thumbnailUrl String?    // URL to thumbnail version
+  size        Int         // File size in bytes
+  mimeType    String      // MIME type (image/jpeg, image/png, etc.)
+  width       Int?        // Image width in pixels
+  height      Int?        // Image height in pixels
+  alt         String?     // Alt text for accessibility
+  sortOrder   Int         @default(0) // For photo ordering
+
+  // Associations
+  orderId     String?
+  order       Order?      @relation("OrderPhotos", fields: [orderId], references: [id], onDelete: Cascade)
+  userId      String?
+  user        User?       @relation("UserPhotos", fields: [userId], references: [id], onDelete: SetNull)
+
+  // Upload metadata
+  uploadStatus PhotoStatus @default(UPLOADING)
+  uploadError  String?     // Error message if upload fails
+
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+
+  @@index([orderId])
+  @@index([userId])
+  @@index([uploadStatus])
+}
+
+// Business Content Management Models
+model BusinessContent {
+  id            String   @id @default(cuid())
+
+  // Associated order/user
+  orderId       String?  @unique
+  order         Order?   @relation("OrderContent", fields: [orderId], references: [id], onDelete: Cascade)
+  userId        String?  @unique
+  user          User?    @relation("UserContent", fields: [userId], references: [id], onDelete: Cascade)
+
+  // Content sections
+  salonDescription  String?  // Rich text salon description
+  aboutOwner       String?  // About the owner/team
+  aboutBusiness    String?  // Business story/philosophy
+  welcomeMessage   String?  // Homepage welcome message
+
+  // Contact and location
+  fullAddress      String?
+  city             String?
+  postalCode       String?
+  phone            String?
+  email            String?
+  website          String?
+
+  // Social media
+  facebookUrl      String?
+  instagramUrl     String?
+  twitterUrl       String?
+  youtubeUrl       String?
+  tiktokUrl        String?
+  linkedinUrl      String?
+
+  // Business operation details
+  specialties      Json?    @default("[]")  // Array of specialties
+  certifications   Json?    @default("[]")  // Professional certifications
+  languages        Json?    @default("[]")  // Languages spoken
+
+  // SEO and marketing
+  metaTitle        String?
+  metaDescription  String?
+  keywords         Json?    @default("[]")
+
+  // Content status
+  isComplete       Boolean  @default(false)
+  lastEditedBy     String?  // User ID who last edited
+
+  // Relationships
+  services         Service[]
+  businessHours    BusinessHours[]
+
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  @@index([orderId])
+  @@index([userId])
+}
+
+model Service {
+  id                String         @id @default(cuid())
+  name              String
+  description       String?
+  price             Float?
+  duration          Int?           // Duration in minutes
+  category          ServiceCategory
+  isActive          Boolean        @default(true)
+  sortOrder         Int            @default(0)
+
+  // Advanced pricing
+  priceFrom         Float?         // "Starting from" price
+  priceTo           Float?         // Price range upper limit
+  priceType         PriceType      @default(FIXED)
+
+  // Service details
+  requirements      String?        // Special requirements or prep instructions
+  aftercare         String?        // Post-service care instructions
+  suitableFor       Json?          @default("[]") // Hair types, conditions this service is good for
+
+  // Associated content
+  businessContentId String
+  businessContent   BusinessContent @relation(fields: [businessContentId], references: [id], onDelete: Cascade)
+
+  createdAt         DateTime       @default(now())
+  updatedAt         DateTime       @updatedAt
+
+  @@index([businessContentId])
+  @@index([category])
+  @@index([isActive])
+}
+
+model BusinessHours {
+  id                String          @id @default(cuid())
+  dayOfWeek         DayOfWeek
+  isOpen            Boolean         @default(true)
+  openTime          String?         // HH:MM format
+  closeTime         String?         // HH:MM format
+
+  // Break time support
+  hasBreak          Boolean         @default(false)
+  breakStartTime    String?         // HH:MM format
+  breakEndTime      String?         // HH:MM format
+
+  // Special notes
+  notes             String?         // Special notes for this day
+
+  // Associated content
+  businessContentId String
+  businessContent   BusinessContent @relation(fields: [businessContentId], references: [id], onDelete: Cascade)
+
+  createdAt         DateTime        @default(now())
+  updatedAt         DateTime        @updatedAt
+
+  @@unique([businessContentId, dayOfWeek])
+  @@index([businessContentId])
+  @@index([dayOfWeek])
+}
+
+// Enums
+enum UserRole {
+  CLIENT
+  ADMIN
+}
+
+enum TemplateCategory {
+  BASIC
+  PREMIUM
+  ENTERPRISE
+}
+
+enum OrderStatus {
+  PENDING
+  PROCESSING
+  COMPLETED
+  CANCELLED
+  REFUNDED
+}
+
+enum ContactStatus {
+  UNREAD
+  READ
+  REPLIED
+  ARCHIVED
+}
+
+enum BusinessType {
+  SALON
+  BARBERSHOP
+  PERSONAL
+}
+
+enum SetupStep {
+  DOMAIN_SELECTION
+  BUSINESS_INFO
+  DESIGN_PREFERENCES
+  CONTENT_EDITOR
+  PHOTOS_UPLOAD
+  REVIEW_LAUNCH
+  COMPLETED
+}
+
+enum PhotoStatus {
+  UPLOADING
+  PROCESSING
+  COMPLETED
+  FAILED
+}
+
+enum ServiceCategory {
+  CUTS
+  COLOR
+  TREATMENTS
+  STYLING
+  PERMS
+  EXTENSIONS
+  NAILS
+  EYEBROWS
+  FACIAL
+  MASSAGE
+  OTHER
+}
+
+enum PriceType {
+  FIXED
+  FROM
+  RANGE
+  CONSULTATION
+}
+
+enum DayOfWeek {
+  MONDAY
+  TUESDAY
+  WEDNESDAY
+  THURSDAY
+  FRIDAY
+  SATURDAY
+  SUNDAY
+}
+
+// Settings management models
+model Settings {
+  id          String   @id @default(cuid())
+  key         String   @unique
+  value       Json
+  category    SettingsCategory
+  description String?
+  isPublic    Boolean  @default(false) // Whether this setting is exposed to public API
+  isEncrypted Boolean  @default(false) // Whether this value should be encrypted
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([category])
+  @@index([key])
+}
+
+model TemplateConfig {
+  id          String   @id @default(cuid())
+  category    String   @unique
+  displayName String
+  description String?
+  features    Json     @default("[]")
+  priceRange  Json     // { min: number, max: number }
+  sortOrder   Int      @default(0)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([isActive])
+}
+
+model DomainPricing {
+  id           String   @id @default(cuid())
+  extension    String   @unique // .com, .es, .net, etc.
+  basePrice    Float    // Base price for this domain
+  discount     Float    @default(0) // Discount percentage
+  isPopular    Boolean  @default(false)
+  isAvailable  Boolean  @default(true)
+  sortOrder    Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([isAvailable])
+  @@index([extension])
+}
+
+// Notification model for client notifications
+model Notification {
+  id         String             @id @default(cuid())
+  userId     String
+  user       User               @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title      String
+  message    String
+  type       NotificationType
+  priority   NotificationPriority @default(MEDIUM)
+  read       Boolean            @default(false)
+  actionUrl  String?            // Optional URL for action button
+  actionText String?            // Optional text for action button
+  metadata   Json?              // Additional data specific to notification type
+  expiresAt  DateTime?          // Optional expiration date
+  createdAt  DateTime           @default(now())
+  updatedAt  DateTime           @updatedAt
+
+  @@index([userId])
+  @@index([read])
+  @@index([type])
+  @@index([createdAt])
+}
+
+// Payment model for tracking payments
+model Payment {
+  id              String        @id @default(cuid())
+  userId          String
+  user            User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  orderId         String?
+  order           Order?        @relation(fields: [orderId], references: [id], onDelete: SetNull)
+  amount          Float
+  currency        String        @default("EUR")
+  status          PaymentStatus
+  method          PaymentMethod
+  stripePaymentId String?       @unique
+  description     String
+  metadata        Json?         // Additional payment metadata
+  paidAt          DateTime?
+  failedAt        DateTime?
+  refundedAt      DateTime?
+  refundAmount    Float?
+
+  // Invoice relationship
+  invoice         Invoice?
+
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  @@index([userId])
+  @@index([orderId])
+  @@index([status])
+  @@index([createdAt])
+}
+
+// Invoice model for billing
+model Invoice {
+  id           String         @id @default(cuid())
+  number       String         @unique // Invoice number (e.g., FAC-2024-001)
+  paymentId    String         @unique
+  payment      Payment        @relation(fields: [paymentId], references: [id], onDelete: Cascade)
+  amount       Float
+  tax          Float
+  subtotal     Float
+  currency     String         @default("EUR")
+  status       InvoiceStatus
+  issuedAt     DateTime
+  dueAt        DateTime
+  paidAt       DateTime?
+  items        InvoiceItem[]
+  downloadUrl  String?        // URL to download PDF invoice
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+
+  @@index([number])
+  @@index([status])
+  @@index([issuedAt])
+}
+
+// Invoice line items
+model InvoiceItem {
+  id          String   @id @default(cuid())
+  invoiceId   String
+  invoice     Invoice  @relation(fields: [invoiceId], references: [id], onDelete: Cascade)
+  description String
+  quantity    Int
+  unitPrice   Float
+  total       Float
+  category    String?  // development, hosting, maintenance, etc.
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([invoiceId])
+}
+
+// Project model for tracking client projects
+model Project {
+  id                   String           @id @default(cuid())
+  orderId              String           @unique
+  order                Order            @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  name                 String
+  status               ProjectStatus
+  progress             Int              @default(0) // Progress percentage 0-100
+  domain               String
+  template             String
+  startDate            DateTime
+  estimatedCompletion  DateTime
+  actualCompletion     DateTime?
+  lastUpdate           DateTime
+
+  // Relationships
+  milestones           Milestone[]
+  files                ProjectFile[]
+  timeline             TimelineEvent[]
+
+  createdAt            DateTime         @default(now())
+  updatedAt            DateTime         @updatedAt
+
+  @@index([orderId])
+  @@index([status])
+  @@index([createdAt])
+}
+
+// Milestone model for project milestones
+model Milestone {
+  id          String          @id @default(cuid())
+  projectId   String
+  project     Project         @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  title       String
+  description String
+  status      MilestoneStatus
+  dueDate     DateTime
+  completedAt DateTime?
+  order       Int             @default(0) // Display order
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+
+  @@index([projectId])
+  @@index([status])
+}
+
+// Project files model
+model ProjectFile {
+  id          String       @id @default(cuid())
+  projectId   String
+  project     Project      @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  name        String
+  type        FileType
+  size        Int          // Size in bytes
+  url         String
+  category    String?      // Design, Documentation, etc.
+  description String?
+  uploadedAt  DateTime     @default(now())
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+
+  @@index([projectId])
+  @@index([type])
+}
+
+// Timeline events for projects
+model TimelineEvent {
+  id          String        @id @default(cuid())
+  projectId   String
+  project     Project       @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  title       String
+  description String
+  type        EventType
+  date        DateTime
+  author      String?       // Person/system that created the event
+  metadata    Json?         // Additional event-specific data
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  @@index([projectId])
+  @@index([type])
+  @@index([date])
+}
+
+// Support ticket model
+model SupportTicket {
+  id          String         @id @default(cuid())
+  userId      String
+  user        User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title       String
+  description String
+  status      TicketStatus
+  priority    TicketPriority
+  category    TicketCategory
+  messages    TicketMessage[]
+  attachments Json?          @default("[]") // Array of attachment URLs stored as JSON
+  resolvedAt  DateTime?
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+
+  @@index([userId])
+  @@index([status])
+  @@index([priority])
+  @@index([createdAt])
+}
+
+// Ticket messages for support conversations
+model TicketMessage {
+  id           String         @id @default(cuid())
+  ticketId     String
+  ticket       SupportTicket  @relation(fields: [ticketId], references: [id], onDelete: Cascade)
+  authorId     String
+  authorName   String
+  message      String
+  isInternal   Boolean        @default(false) // Internal notes vs client visible
+  attachments  Json?          @default("[]") // Array of attachment URLs stored as JSON
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+
+  @@index([ticketId])
+  @@index([createdAt])
+}
+
+// Enums for new models
+enum NotificationType {
+  PROJECT_UPDATE
+  SUPPORT
+  PAYMENT
+  SYSTEM
+  MARKETING
+  MILESTONE
+}
+
+enum NotificationPriority {
+  LOW
+  MEDIUM
+  HIGH
+  URGENT
+}
+
+enum PaymentStatus {
+  PENDING
+  PROCESSING
+  COMPLETED
+  FAILED
+  REFUNDED
+  CANCELLED
+}
+
+enum PaymentMethod {
+  CARD
+  PAYPAL
+  BANK_TRANSFER
+  STRIPE
+}
+
+enum InvoiceStatus {
+  DRAFT
+  SENT
+  PAID
+  OVERDUE
+  CANCELLED
+}
+
+enum ProjectStatus {
+  PLANNING
+  DESIGN
+  DEVELOPMENT
+  TESTING
+  COMPLETED
+  LIVE
+  ON_HOLD
+  CANCELLED
+}
+
+enum MilestoneStatus {
+  PENDING
+  IN_PROGRESS
+  BLOCKED
+  COMPLETED
+}
+
+enum FileType {
+  DESIGN
+  DOCUMENT
+  IMAGE
+  VIDEO
+  OTHER
+}
+
+enum EventType {
+  MILESTONE
+  UPDATE
+  MESSAGE
+  ALERT
+  SYSTEM
+}
+
+enum TicketStatus {
+  OPEN
+  IN_PROGRESS
+  WAITING_RESPONSE
+  RESOLVED
+  CLOSED
+}
+
+enum TicketPriority {
+  LOW
+  MEDIUM
+  HIGH
+  URGENT
+}
+
+enum TicketCategory {
+  TECHNICAL
+  BILLING
+  DESIGN
+  CONTENT
+  FEATURE_REQUEST
+  OTHER
+}
+
+enum SettingsCategory {
+  SITE
+  EMAIL
+  PAYMENT
+  SEO
+  SYSTEM
+  SECURITY
+  NOTIFICATIONS
+  INTEGRATIONS
+}
+
+// ===========================================
+// ANALYTICS & TRACKING MODELS
+// ===========================================
+
+// User sessions for tracking and analytics
+model UserSession {
+  id              String          @id @default(cuid())
+  sessionId       String          @unique
+  userId          String?
+  user            User?           @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  // Session details
+  ipAddress       String
+  userAgent       String
+  country         String?
+  city            String?
+  device          String?         // mobile, desktop, tablet
+  browser         String?
+  os              String?
+
+  // Referrer and UTM tracking
+  referrer        String?
+  utmSource       String?
+  utmMedium       String?
+  utmCampaign     String?
+  utmContent      String?
+  utmTerm         String?
+
+  // Session activity
+  startTime       DateTime        @default(now())
+  lastActivity    DateTime        @default(now())
+  endTime         DateTime?
+  duration        Int?            // Duration in seconds
+  pageViewCount   Int             @default(0)
+  isActive        Boolean         @default(true)
+
+  // Conversion tracking
+  hasConverted    Boolean         @default(false)
+  conversionValue Float?
+  conversionType  String?         // purchase, signup, contact
+
+  // Relationships
+  pageViews       PageView[]
+  events          AnalyticsEvent[]
+
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+
+  @@index([sessionId])
+  @@index([userId])
+  @@index([startTime])
+  @@index([hasConverted])
+  @@index([utmSource])
+  @@index([utmCampaign])
+}
+
+// Page views tracking
+model PageView {
+  id            String      @id @default(cuid())
+  sessionId     String
+  session       UserSession @relation(fields: [sessionId], references: [sessionId], onDelete: Cascade)
+
+  // Page details
+  path          String
+  title         String?
+  url           String
+  referrer      String?
+
+  // Timing metrics
+  loadTime      Int?        // Page load time in ms
+  timeOnPage    Int?        // Time spent on page in seconds
+  scrollDepth   Int?        // Max scroll depth percentage
+
+  // Exit tracking
+  exitPage      Boolean     @default(false)
+  bounced       Boolean     @default(false)
+
+  viewedAt      DateTime    @default(now())
+  leftAt        DateTime?
+
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+
+  @@index([sessionId])
+  @@index([path])
+  @@index([viewedAt])
+  @@index([exitPage])
+}
+
+// Custom events tracking
+model AnalyticsEvent {
+  id            String          @id @default(cuid())
+  sessionId     String
+  session       UserSession     @relation(fields: [sessionId], references: [sessionId], onDelete: Cascade)
+
+  // Event details
+  name          String          // click_cta, view_template, form_submit, etc.
+  category      EventCategory
+  action        String          // click, view, submit, download, etc.
+  label         String?
+  value         Float?
+
+  // Page context
+  page          String
+  element       String?         // CSS selector or element description
+  position      String?         // button position, section, etc.
+
+  // E-commerce events
+  revenue       Float?
+  currency      String?         @default("EUR")
+  transactionId String?
+  itemCategory  String?
+  itemName      String?
+  itemId        String?
+  quantity      Int?
+
+  // Custom properties
+  properties    Json?           // Additional event-specific data
+
+  occurredAt    DateTime        @default(now())
+  createdAt     DateTime        @default(now())
+
+  @@index([sessionId])
+  @@index([name])
+  @@index([category])
+  @@index([occurredAt])
+  @@index([page])
+}
+
+// Funnel tracking for conversion analysis
+model FunnelStep {
+  id              String      @id @default(cuid())
+  sessionId       String
+  funnelName      String      // checkout, onboarding, contact, etc.
+  stepName        String      // template_selection, info_form, payment, etc.
+  stepOrder       Int
+  completed       Boolean     @default(false)
+  timeSpent       Int?        // Time spent on this step in seconds
+  exitPoint       Boolean     @default(false)
+
+  // Additional context
+  metadata        Json?       // Step-specific data
+
+  enteredAt       DateTime    @default(now())
+  completedAt     DateTime?
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+
+  @@index([sessionId])
+  @@index([funnelName])
+  @@index([stepOrder])
+  @@index([completed])
+  @@index([exitPoint])
+  @@index([enteredAt])
+}
+
+// Heat map data for click tracking
+model HeatmapData {
+  id            String      @id @default(cuid())
+  page          String      // Page path
+  elementId     String?     // HTML element ID
+  elementClass  String?     // HTML element class
+  elementTag    String      // HTML tag name
+
+  // Position data
+  xPosition     Int
+  yPosition     Int
+  clickCount    Int         @default(1)
+
+  // Context
+  deviceType    String?     // mobile, desktop, tablet
+  screenWidth   Int?
+  screenHeight  Int?
+
+  date          DateTime    @default(now())
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+
+  @@index([page])
+  @@index([date])
+  @@index([elementTag])
+  @@index([deviceType])
+}
+
+// A/B Testing experiments
+model ABTest {
+  id              String        @id @default(cuid())
+  name            String        @unique
+  description     String
+  status          TestStatus    @default(DRAFT)
+
+  // Test configuration
+  trafficSplit    Float         @default(0.5) // Percentage for variant A
+  startDate       DateTime?
+  endDate         DateTime?
+
+  // Targeting
+  targetPages     String        // JSON array of page paths
+  targetRules     Json?         // Targeting rules (device, location, etc.)
+
+  // Metrics
+  primaryMetric   String        // conversion_rate, click_rate, etc.
+  variants        ABVariant[]
+  participations  ABParticipation[]
+
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  @@index([status])
+  @@index([startDate])
+  @@index([endDate])
+}
+
+// A/B Test variants
+model ABVariant {
+  id              String          @id @default(cuid())
+  testId          String
+  test            ABTest          @relation(fields: [testId], references: [id], onDelete: Cascade)
+
+  name            String          // control, variant_a, variant_b
+  description     String
+  isControl       Boolean         @default(false)
+
+  // Variant configuration
+  changes         Json            // CSS/JS changes to apply
+
+  // Results
+  participations  ABParticipation[]
+  conversions     Int             @default(0)
+  conversionRate  Float           @default(0.0)
+
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+
+  @@index([testId])
+  @@index([isControl])
+}
+
+// A/B Test participations
+model ABParticipation {
+  id              String      @id @default(cuid())
+  testId          String
+  test            ABTest      @relation(fields: [testId], references: [id], onDelete: Cascade)
+  variantId       String
+  variant         ABVariant   @relation(fields: [variantId], references: [id], onDelete: Cascade)
+  sessionId       String
+
+  // Participation details
+  exposedAt       DateTime    @default(now())
+  converted       Boolean     @default(false)
+  convertedAt     DateTime?
+  conversionValue Float?
+
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+
+  @@unique([testId, sessionId])
+  @@index([testId])
+  @@index([variantId])
+  @@index([sessionId])
+  @@index([converted])
+}
+
+// Facebook Pixel events for remarketing
+model FacebookPixelEvent {
+  id              String          @id @default(cuid())
+  sessionId       String?
+
+  // Pixel event details
+  eventName       PixelEventType
+  eventId         String?         // Deduplication ID
+
+  // Standard e-commerce data
+  value           Float?
+  currency        String?         @default("EUR")
+  contentName     String?
+  contentCategory String?
+  contentIds      String?         // JSON array of content IDs
+  contentType     String?
+  numItems        Int?
+
+  // Custom parameters
+  customData      Json?
+
+  // User data (hashed for privacy)
+  hashedEmail     String?
+  hashedPhone     String?
+
+  // Context
+  sourceUrl       String
+  userAgent       String?
+  ipAddress       String?
+
+  sentAt          DateTime        @default(now())
+  acknowledged    Boolean         @default(false)
+  createdAt       DateTime        @default(now())
+
+  @@index([eventName])
+  @@index([sentAt])
+  @@index([sessionId])
+  @@index([acknowledged])
+}
+
+// Aggregated analytics for performance
+model DailyAnalytics {
+  id                  String      @id @default(cuid())
+  date                DateTime    @unique
+
+  // Traffic metrics
+  visitors            Int         @default(0)
+  pageViews           Int         @default(0)
+  sessions            Int         @default(0)
+  bounceRate          Float       @default(0.0)
+  avgSessionDuration  Float       @default(0.0)
+
+  // Conversion metrics
+  conversions         Int         @default(0)
+  conversionRate      Float       @default(0.0)
+  revenue             Float       @default(0.0)
+  avgOrderValue       Float       @default(0.0)
+
+  // Traffic sources
+  organicTraffic      Int         @default(0)
+  directTraffic       Int         @default(0)
+  referralTraffic     Int         @default(0)
+  socialTraffic       Int         @default(0)
+  paidTraffic         Int         @default(0)
+  emailTraffic        Int         @default(0)
+
+  // Device breakdown
+  desktopSessions     Int         @default(0)
+  mobileSessions      Int         @default(0)
+  tabletSessions      Int         @default(0)
+
+  // Top pages (JSON)
+  topPages            Json?       // Array of {path, views}
+  topSources          Json?       // Array of {source, sessions}
+  topCountries        Json?       // Array of {country, sessions}
+
+  createdAt           DateTime    @default(now())
+  updatedAt           DateTime    @updatedAt
+
+  @@index([date])
+}
+
+
+// Enums for analytics
+enum EventCategory {
+  PAGE_VIEW
+  NAVIGATION
+  INTERACTION
+  ECOMMERCE
+  FORM
+  DOWNLOAD
+  SOCIAL
+  VIDEO
+  ERROR
+  CUSTOM
+}
+
+enum TestStatus {
+  DRAFT
+  RUNNING
+  PAUSED
+  COMPLETED
+  CANCELLED
+}
+
+enum PixelEventType {
+  PageView
+  ViewContent
+  Search
+  AddToCart
+  AddToWishlist
+  InitiateCheckout
+  AddPaymentInfo
+  Purchase
+  Lead
+  CompleteRegistration
+  Contact
+  CustomizeProduct
+  Donate
+  FindLocation
+  Schedule
+  StartTrial
+  SubmitApplication
+  Subscribe
+}

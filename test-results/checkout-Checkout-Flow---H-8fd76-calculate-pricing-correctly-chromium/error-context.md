@@ -1,0 +1,89 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - link "Saltar al contenido principal" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - main [ref=e4]:
+    - generic [ref=e8]:
+      - generic [ref=e9]:
+        - heading "Configura tu Web Profesional" [level=1] [ref=e10]
+        - paragraph [ref=e11]: En solo 3 pasos tendrás tu página web funcionando
+      - generic [ref=e13]:
+        - navigation "Progress" [ref=e14]:
+          - list [ref=e15]:
+            - listitem [ref=e16]:
+              - generic [ref=e20]: "1"
+              - generic [ref=e23]:
+                - heading "Datos del Negocio" [level=3] [ref=e24]
+                - paragraph [ref=e25]: Información básica de tu peluquería
+            - listitem [ref=e26]:
+              - generic [ref=e28]:
+                - img [ref=e29]
+                - generic [ref=e31]: "2"
+              - generic [ref=e34]:
+                - heading "Configuración Web" [level=3] [ref=e35]
+                - paragraph [ref=e36]: Plantilla, dominio y servicios
+            - listitem [ref=e37]:
+              - generic [ref=e39]:
+                - img [ref=e40]
+                - generic [ref=e42]: "3"
+              - generic [ref=e43]:
+                - heading "Resumen y Pago" [level=3] [ref=e44]
+                - paragraph [ref=e45]: Confirma tu pedido y paga
+        - generic [ref=e47]:
+          - generic [ref=e48]:
+            - heading "Datos del Negocio" [level=4] [ref=e49]
+            - paragraph [ref=e50]: Información básica de tu peluquería
+          - generic [ref=e51]:
+            - generic [ref=e52]: Paso 1 de 3
+            - img [ref=e53]
+            - generic [ref=e55]: "Siguiente: Configuración Web"
+      - generic [ref=e57]:
+        - generic [ref=e58]:
+          - generic [ref=e59]:
+            - heading "Información del Negocio" [level=3] [ref=e60]:
+              - img [ref=e61]
+              - text: Información del Negocio
+            - generic [ref=e64]:
+              - generic [ref=e65]: Nombre de la peluquería *
+              - 'textbox "Ej: Salón Bella Vista" [ref=e66]'
+            - generic [ref=e67]:
+              - generic [ref=e68]: Nombre del propietario *
+              - textbox "Tu nombre completo" [ref=e69]
+            - generic [ref=e70]:
+              - generic [ref=e71]: CIF/NIF (opcional)
+              - textbox "12345678Z" [ref=e72]
+          - generic [ref=e73]:
+            - heading "Contacto y Ubicación" [level=3] [ref=e74]:
+              - img [ref=e75]
+              - text: Contacto y Ubicación
+            - generic [ref=e78]:
+              - generic [ref=e79]: Teléfono de contacto *
+              - textbox "+34 600 123 456" [ref=e80]
+            - generic [ref=e81]:
+              - generic [ref=e82]: Email *
+              - textbox "tu@email.com" [ref=e83]
+            - generic [ref=e84]:
+              - generic [ref=e85]: Dirección completa *
+              - textbox "Calle Principal, 123" [ref=e86]
+            - generic [ref=e87]:
+              - generic [ref=e88]:
+                - generic [ref=e89]: Ciudad *
+                - textbox "Madrid" [ref=e90]
+              - generic [ref=e91]:
+                - generic [ref=e92]: Código postal *
+                - textbox "28001" [ref=e93]
+        - button "Continuar" [ref=e95] [cursor=pointer]:
+          - generic [ref=e96]: Continuar
+          - img [ref=e97]
+  - generic [ref=e100]:
+    - paragraph [ref=e102]:
+      - text: Utilizamos cookies para mejorar tu experiencia y analizar el tráfico de nuestro sitio.
+      - link "Política de privacidad" [ref=e103] [cursor=pointer]:
+        - /url: /privacy
+    - generic [ref=e104]:
+      - button "Rechazar" [ref=e105] [cursor=pointer]
+      - button "Aceptar" [ref=e106] [cursor=pointer]
+  - alert [ref=e107]
+```

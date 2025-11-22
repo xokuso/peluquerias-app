@@ -1,0 +1,15 @@
+
+> peluquerias-app@0.1.0 dev
+> next dev
+
+  ▲ Next.js 14.2.33
+  - Local:        http://localhost:3000
+  - Environments: .env.local, .env
+
+ ✓ Starting...
+ ✓ Ready in 1202ms
+ ○ Compiling / ...
+ ✓ Compiled / in 2.2s (1498 modules)
+ GET / 200 in 2396ms
+ ✓ Compiled in 160ms (734 modules)
+[?25h

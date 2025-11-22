@@ -1,0 +1,647 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - link "Saltar al contenido principal" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - main [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e12]:
+        - generic [ref=e13]:
+          - heading "Consigue tu web perfecta para peluquería en solo 2 minutos" [level=1] [ref=e15]:
+            - generic [ref=e16]: Consigue tu web perfecta para
+            - generic [ref=e17]: peluquería
+            - generic [ref=e18]: en solo
+            - generic [ref=e19]: 2 minutos
+          - paragraph [ref=e21]: Diseños profesionales especializados en peluquerías. Setup completo por 199€ + 49€/mes. Sin complicaciones técnicas.
+          - generic [ref=e23]:
+            - button "Ver mi web en 2 minutos" [ref=e24] [cursor=pointer]:
+              - img [ref=e25]
+              - generic [ref=e28]: Ver mi web en 2 minutos
+            - button "Ver plantillas" [ref=e30] [cursor=pointer]:
+              - generic [ref=e31]: Ver plantillas
+          - generic [ref=e34]:
+            - generic [ref=e35]:
+              - img [ref=e36]
+              - generic [ref=e41]: 50+ peluquerías confían en nosotros
+            - generic [ref=e43]: 4.9/5 (127 reseñas)
+          - generic [ref=e45]:
+            - generic [ref=e46]:
+              - img [ref=e47]
+              - generic [ref=e50]: Setup en 24 horas
+            - generic [ref=e51]:
+              - img [ref=e52]
+              - generic [ref=e55]: Dominio incluido
+            - generic [ref=e56]:
+              - img [ref=e57]
+              - generic [ref=e60]: Diseño responsive
+            - generic [ref=e61]:
+              - img [ref=e62]
+              - generic [ref=e65]: Soporte 24/7
+        - generic [ref=e67]:
+          - generic [ref=e71]: Online
+          - generic [ref=e73]:
+            - img [ref=e74]
+            - generic [ref=e76]: 4.9★
+          - generic [ref=e84]: mipeluqueria.com
+      - generic [ref=e101] [cursor=pointer]:
+        - generic [ref=e102]: Descubre más
+        - img [ref=e104]
+    - generic [ref=e113]:
+      - generic [ref=e115]:
+        - heading "¿Por qué no usar Wix o un freelancer para tu peluquería?" [level=2] [ref=e116]:
+          - text: ¿Por qué no usar
+          - generic [ref=e117]: Wix
+          - text: o un
+          - generic [ref=e119]: freelancer
+          - text: para tu peluquería?
+        - paragraph [ref=e121]: Porque tu negocio es único y necesita soluciones que realmente funcionen para peluquerías
+        - generic [ref=e122]:
+          - img [ref=e124]
+          - generic [ref=e130]: Especialistas exclusivos en peluquerías desde 2019
+      - generic [ref=e131]:
+        - generic [ref=e133]:
+          - img [ref=e137]
+          - heading "Sin más llamadas fuera de horario" [level=3] [ref=e142]
+          - paragraph [ref=e143]: Tus clientes reservan online 24/7
+          - paragraph [ref=e144]: Sistema de reservas integrado con Google y redes sociales. Gestión automática de horarios y disponibilidad.
+          - generic [ref=e146]:
+            - img [ref=e147]
+            - generic [ref=e150]: Específico para peluquerías
+        - generic [ref=e153]:
+          - img [ref=e157]
+          - heading "Atrae clientes de tu zona automáticamente" [level=3] [ref=e160]
+          - paragraph [ref=e161]: Apareces primero en Google Maps
+          - paragraph [ref=e162]: SEO local optimizado para búsquedas como 'peluquería cerca de mí'. Ficha de Google My Business profesional.
+          - generic [ref=e164]:
+            - img [ref=e165]
+            - generic [ref=e168]: Específico para peluquerías
+        - generic [ref=e171]:
+          - img [ref=e175]
+          - heading "Tus clientes ven tu talento profesional" [level=3] [ref=e178]
+          - paragraph [ref=e179]: Más reservas por trabajos destacados
+          - paragraph [ref=e180]: Galería optimizada para antes/después, looks especiales y técnicas de color que realmente venden.
+          - generic [ref=e182]:
+            - img [ref=e183]
+            - generic [ref=e186]: Específico para peluquerías
+        - generic [ref=e189]:
+          - img [ref=e193]
+          - heading "Diseñado específicamente para peluquerías" [level=3] [ref=e199]
+          - paragraph [ref=e200]: No pierdes tiempo explicando tu negocio
+          - paragraph [ref=e201]: Conocemos cortes, color, tratamientos y estilismo. Vocabulario y funciones pensadas para tu sector.
+          - generic [ref=e203]:
+            - img [ref=e204]
+            - generic [ref=e207]: Específico para peluquerías
+      - generic [ref=e213]:
+        - generic [ref=e214]:
+          - heading "Resultados que hablan por sí solos" [level=3] [ref=e215]
+          - paragraph [ref=e216]: No somos una agencia genérica. Trabajamos exclusivamente con peluquerías y conocemos exactamente qué funciona en tu sector.
+        - generic [ref=e217]:
+          - generic [ref=e219]:
+            - img [ref=e221]
+            - generic [ref=e223]: 50+ peluquerías activas
+            - generic [ref=e224]: En toda España
+          - generic [ref=e226]:
+            - img [ref=e228]
+            - generic [ref=e233]: 4.9/5 satisfacción
+            - generic [ref=e234]: 127 reseñas verificadas
+          - generic [ref=e236]:
+            - img [ref=e238]
+            - generic [ref=e241]: +40% más reservas
+            - generic [ref=e242]: Promedio primer año
+        - generic [ref=e244]:
+          - img [ref=e246]
+          - generic [ref=e249]:
+            - paragraph [ref=e250]: “Desde que tengo la web, mis clientas me encuentran por Google y reservan online. Ya no tengo que estar pendiente del teléfono. Realmente entienden cómo funciona una peluquería.”
+            - generic [ref=e251]:
+              - generic [ref=e253]: M
+              - generic [ref=e254]:
+                - generic [ref=e255]: María Carmen
+                - generic [ref=e256]: Peluquería MC - Valencia
+              - generic [ref=e257]:
+                - img [ref=e259]
+                - img [ref=e262]
+                - img [ref=e265]
+                - img [ref=e268]
+                - img [ref=e271]
+        - generic [ref=e274]:
+          - generic [ref=e275]:
+            - img [ref=e277]
+            - generic [ref=e280]: Cada día sin web profesional
+          - paragraph [ref=e281]: pierdes clientes que van a peluquerías con mejor presencia online
+    - generic [ref=e284]:
+      - generic [ref=e289]:
+        - heading "Encuentra tu plantilla perfecta" [level=2] [ref=e290]:
+          - generic [ref=e291]: Encuentra tu
+          - text: plantilla perfecta
+        - paragraph [ref=e292]: Cada plantilla está diseñada específicamente para diferentes tipos de peluquerías. Encuentra la que mejor represente la personalidad de tu salón.
+      - generic [ref=e295]:
+        - generic [ref=e296]:
+          - button "Más Elegidos Las plantillas más exitosas" [ref=e297] [cursor=pointer]:
+            - generic [ref=e298]:
+              - img [ref=e299]
+              - generic [ref=e302]: Más Elegidos
+            - generic: Las plantillas más exitosas
+          - button "Recomendados Seleccionados por expertos" [ref=e304] [cursor=pointer]:
+            - generic [ref=e305]:
+              - img [ref=e306]
+              - generic [ref=e309]: Recomendados
+            - generic: Seleccionados por expertos
+          - button "Tendencias Lo más nuevo y actual" [ref=e310] [cursor=pointer]:
+            - generic [ref=e311]:
+              - img [ref=e312]
+              - generic [ref=e314]: Tendencias
+            - generic: Lo más nuevo y actual
+          - button "Elegancia Alta gama y sofisticación" [ref=e315] [cursor=pointer]:
+            - generic [ref=e316]:
+              - img [ref=e317]
+              - generic [ref=e320]: Elegancia
+            - generic: Alta gama y sofisticación
+          - button "Modernos Innovación y vanguardia" [ref=e321] [cursor=pointer]:
+            - generic [ref=e322]:
+              - img [ref=e323]
+              - generic [ref=e326]: Modernos
+            - generic: Innovación y vanguardia
+        - paragraph [ref=e328]: Las plantillas más exitosas
+      - paragraph [ref=e331]:
+        - text: 0 plantillas encontradas
+        - generic [ref=e332]: en Más Elegidos
+      - generic [ref=e345]:
+        - img [ref=e347]
+        - heading "No encontramos plantillas" [level=3] [ref=e350]
+        - paragraph [ref=e351]: No hay plantillas que coincidan con tu búsqueda.
+        - button "Ver todas las plantillas" [ref=e352] [cursor=pointer]
+      - generic [ref=e360]:
+        - heading "¿No encuentras lo que buscas?" [level=3] [ref=e361]
+        - paragraph [ref=e362]: Cada plantilla puede personalizarse completamente. Nuestro equipo puede adaptar cualquier diseño a la identidad específica de tu peluquería.
+        - generic [ref=e363]:
+          - button "Contactar por personalización" [ref=e364] [cursor=pointer]
+          - button "Ver todas las plantillas" [ref=e365] [cursor=pointer]: Ver todas las plantillas
+      - generic [ref=e366]:
+        - generic [ref=e368]:
+          - img [ref=e370]
+          - heading "Diseño Profesional" [level=4] [ref=e373]
+          - paragraph [ref=e374]: Creado por expertos en UX específicamente para peluquerías
+        - generic [ref=e377]:
+          - img [ref=e379]
+          - heading "Fácil de Usar" [level=4] [ref=e381]
+          - paragraph [ref=e382]: Tu web estará lista en menos de 24 horas
+        - generic [ref=e385]:
+          - img [ref=e387]
+          - heading "Completamente Personalizable" [level=4] [ref=e390]
+          - paragraph [ref=e391]: Adaptamos cada detalle a tu marca y estilo
+    - generic [ref=e397]:
+      - generic [ref=e398]:
+        - generic [ref=e399]:
+          - generic [ref=e401]:
+            - img [ref=e402]
+            - generic [ref=e405]: 247 peluqueras viendo esta oferta ahora
+          - generic [ref=e408]:
+            - img [ref=e409]
+            - generic [ref=e412]: Solo quedan 23 plazas con precio especial
+        - generic [ref=e416]: Ana M. de Madrid acaba de contratar su web hace 3 min
+      - generic [ref=e418]:
+        - generic [ref=e421]:
+          - img [ref=e422]
+          - text: OFERTA LANZAMIENTO
+        - generic [ref=e426]:
+          - generic [ref=e427]:
+            - img [ref=e428]
+            - generic [ref=e430]: Solo quedan 23 plazas con este precio
+          - generic [ref=e431]: 6d 14h 32m
+        - generic [ref=e432]:
+          - generic [ref=e433]:
+            - heading "Precio Transparente, Sin Sorpresas" [level=2] [ref=e434]
+            - paragraph [ref=e435]: Lo que cuesta 1 mes de publicidad, para siempre
+          - generic [ref=e436]:
+            - generic [ref=e437]:
+              - generic [ref=e439]:
+                - generic [ref=e440]: "Precio normal: 299€ + 79€/mes"
+                - generic [ref=e441]:
+                  - generic [ref=e442]: 199€
+                  - generic [ref=e443]: + 49€/mes
+                - generic [ref=e444]:
+                  - generic [ref=e445]: Solo 1,63€ al día
+                  - generic [ref=e446]: Menos que un café = Web que genera clientes 24/7
+                - generic [ref=e447]:
+                  - generic [ref=e448]: "Tu ROI estimado:"
+                  - generic [ref=e449]: 1 cliente extra/mes = 60€
+                  - generic [ref=e450]: Web genera 3-5 extra =180-300€/mes
+                  - generic [ref=e451]: "ROI: 131-251€ mensuales"
+              - button "Ver mi peluquería online" [ref=e452] [cursor=pointer]:
+                - generic [ref=e453]:
+                  - img [ref=e454]
+                  - text: Ver mi peluquería online
+              - generic [ref=e457]:
+                - generic [ref=e458]:
+                  - img [ref=e460]
+                  - generic [ref=e462]: 30 días garantía total reembolso
+                - generic [ref=e463]:
+                  - img [ref=e465]
+                  - generic [ref=e467]: Cancela cuando quieras, sin penalizaciones
+                - generic [ref=e468]:
+                  - img [ref=e470]
+                  - generic [ref=e472]: Soporte prioritario incluido primer mes
+            - generic [ref=e473]:
+              - generic [ref=e474]:
+                - heading "Todo lo que incluye:" [level=3] [ref=e475]
+                - generic [ref=e476]:
+                  - generic [ref=e477]:
+                    - generic [ref=e478]:
+                      - img [ref=e480]
+                      - generic [ref=e482]: Diseño personalizado
+                    - generic [ref=e483]: 800€
+                  - generic [ref=e484]:
+                    - generic [ref=e485]:
+                      - img [ref=e487]
+                      - generic [ref=e489]: Configuración técnica
+                    - generic [ref=e490]: 300€
+                  - generic [ref=e491]:
+                    - generic [ref=e492]:
+                      - img [ref=e494]
+                      - generic [ref=e496]: SEO básico setup
+                    - generic [ref=e497]: 400€
+                  - generic [ref=e498]:
+                    - generic [ref=e499]:
+                      - img [ref=e501]
+                      - generic [ref=e503]: Dominio + hosting año 1
+                    - generic [ref=e504]: 120€
+                  - generic [ref=e505]:
+                    - generic [ref=e506]:
+                      - img [ref=e508]
+                      - generic [ref=e510]: Sistema de reservas
+                    - generic [ref=e511]: 500€
+                  - generic [ref=e512]:
+                    - generic [ref=e513]:
+                      - img [ref=e515]
+                      - generic [ref=e517]: Soporte técnico 1er mes
+                    - generic [ref=e518]: 200€
+                - generic [ref=e519]:
+                  - generic [ref=e520]:
+                    - generic [ref=e521]: "VALOR TOTAL:"
+                    - generic [ref=e522]: 2320€
+                  - generic [ref=e523]:
+                    - generic [ref=e524]: "PAGAS SOLO: 199€"
+                    - generic [ref=e525]: Ahorras 2121€
+              - generic [ref=e526]:
+                - generic [ref=e527]:
+                  - img [ref=e529]
+                  - generic [ref=e531]: Reservas 24/7 automáticas
+                - generic [ref=e532]:
+                  - img [ref=e534]
+                  - generic [ref=e536]: Aparece primero en Google
+                - generic [ref=e537]:
+                  - img [ref=e539]
+                  - generic [ref=e541]: Sin más llamadas fuera de horario
+                - generic [ref=e542]:
+                  - img [ref=e544]
+                  - generic [ref=e546]: Galería de trabajos profesional
+                - generic [ref=e547]:
+                  - img [ref=e549]
+                  - generic [ref=e551]: Precio fijo, sin sorpresas
+                - generic [ref=e552]:
+                  - img [ref=e554]
+                  - generic [ref=e556]: Cancela cuando quieras
+          - generic [ref=e557]:
+            - heading "Peluquerías que ya confían en nosotros:" [level=3] [ref=e558]
+            - generic [ref=e559]:
+              - generic [ref=e560]:
+                - generic [ref=e562]:
+                  - generic [ref=e563]:
+                    - generic [ref=e564]:
+                      - img [ref=e565]
+                      - img [ref=e567]
+                      - img [ref=e569]
+                      - img [ref=e571]
+                      - img [ref=e573]
+                    - generic [ref=e575]: Carmen
+                    - generic [ref=e576]: Bella Madrid
+                  - generic [ref=e577]: +40% reservas en 2 meses
+                - generic [ref=e579]:
+                  - generic [ref=e580]:
+                    - generic [ref=e581]:
+                      - img [ref=e582]
+                      - img [ref=e584]
+                      - img [ref=e586]
+                      - img [ref=e588]
+                      - img [ref=e590]
+                    - generic [ref=e592]: Ana
+                    - generic [ref=e593]: Style Sevilla
+                  - generic [ref=e594]: +35% clientes nuevos
+                - generic [ref=e596]:
+                  - generic [ref=e597]:
+                    - generic [ref=e598]:
+                      - img [ref=e599]
+                      - img [ref=e601]
+                      - img [ref=e603]
+                      - img [ref=e605]
+                      - img [ref=e607]
+                    - generic [ref=e609]: María
+                    - generic [ref=e610]: Luxury Barcelona
+                  - generic [ref=e611]: ROI 4.2x primer año
+              - generic [ref=e614]:
+                - generic [ref=e615]:
+                  - generic [ref=e616]: 👩🏻‍💼
+                  - generic [ref=e617]:
+                    - img [ref=e618]
+                    - img [ref=e620]
+                    - img [ref=e622]
+                    - img [ref=e624]
+                    - img [ref=e626]
+                  - blockquote [ref=e628]: “En 2 meses pasé de 20 a 35 clientes por semana. La inversión se pagó sola.”
+                  - generic [ref=e629]: Carmen Rodríguez
+                  - generic [ref=e630]: Bella Vista Madrid
+                - generic [ref=e631]:
+                  - button [ref=e632] [cursor=pointer]
+                  - button [ref=e633] [cursor=pointer]
+                  - button [ref=e634] [cursor=pointer]
+          - button "Calcula cuánto dinero pierdes sin web profesional Haz clic para calcularlo" [ref=e637] [cursor=pointer]:
+            - generic [ref=e638]:
+              - img [ref=e639]
+              - generic [ref=e642]:
+                - generic [ref=e643]: Calcula cuánto dinero pierdes sin web profesional
+                - generic [ref=e644]: Haz clic para calcularlo
+            - img [ref=e645]
+          - generic [ref=e647]:
+            - button "Empezar mi web profesional ahora" [ref=e649] [cursor=pointer]:
+              - generic [ref=e651]: Empezar mi web profesional ahora
+            - generic [ref=e655]: Después será 299€ + 79€/mes • Plazas limitadas
+          - generic [ref=e656]:
+            - generic [ref=e657]:
+              - generic [ref=e658]: “¿Es caro?”
+              - generic [ref=e659]: 1,63€/día vs perder clientes diariamente
+            - generic [ref=e660]:
+              - generic [ref=e661]: “¿Funciona realmente?”
+              - generic [ref=e662]: 30 días garantía + casos de éxito reales
+            - generic [ref=e663]:
+              - generic [ref=e664]: “¿Y si no me gusta?”
+              - generic [ref=e665]: Cancela cuando quieras, sin compromisos
+            - generic [ref=e666]:
+              - generic [ref=e667]: “¿Lo necesito realmente?”
+              - generic [ref=e668]: Tu competencia YA lo tiene y gana clientes
+    - generic [ref=e671]:
+      - generic [ref=e672]:
+        - generic [ref=e673]:
+          - img [ref=e674]
+          - text: Testimonios Reales
+        - heading "Lo Que Dicen Nuestras Peluqueras" [level=2] [ref=e679]
+        - paragraph [ref=e680]: Casos reales de peluquerías que han transformado su negocio con nosotros.
+        - generic [ref=e681]:
+          - generic:
+            - generic:
+              - generic: +47%
+              - generic: Promedio de crecimiento
+          - generic:
+            - generic:
+              - generic: 50+
+              - generic: Peluquerías activas
+          - generic:
+            - generic:
+              - generic: 4.9/5
+              - generic: Satisfacción
+      - generic [ref=e682]:
+        - generic [ref=e684]:
+          - generic [ref=e686]:
+            - generic [ref=e689]: CR
+            - generic [ref=e690]:
+              - heading "Carmen Ruiz" [level=3] [ref=e691]
+              - paragraph [ref=e692]: Peluquería Bella
+              - generic [ref=e693]:
+                - img [ref=e694]
+                - generic [ref=e697]: Madrid
+            - generic [ref=e700]: 5/5
+          - generic [ref=e702]:
+            - generic [ref=e703]: “
+            - blockquote [ref=e704]: En 3 meses aumenté mis reservas un 40%. Antes perdía clientes porque no me encontraban online. Ahora aparezco primera en Google cuando buscan 'peluquería Chamartín'.
+            - generic [ref=e705]: ”
+          - generic [ref=e707]:
+            - generic [ref=e708]:
+              - img [ref=e709]
+              - generic [ref=e712]: +40%
+              - generic [ref=e713]: mejora
+            - generic [ref=e714]:
+              - img [ref=e715]
+              - generic [ref=e718]: 3 meses
+              - generic [ref=e719]: tiempo
+            - generic [ref=e720]:
+              - img [ref=e721]
+              - generic [ref=e723]: Madrid
+              - generic [ref=e724]: ubicación
+          - generic [ref=e726]:
+            - generic [ref=e727]: Diseño Elegance
+            - generic [ref=e728]: SEO local
+        - generic [ref=e733]:
+          - generic [ref=e735]:
+            - generic [ref=e738]: AG
+            - generic [ref=e739]:
+              - heading "Ana García" [level=3] [ref=e740]
+              - paragraph [ref=e741]: Studio Ana
+              - generic [ref=e742]:
+                - img [ref=e743]
+                - generic [ref=e746]: Sevilla
+            - generic [ref=e749]: 5/5
+          - generic [ref=e751]:
+            - generic [ref=e752]: “
+            - blockquote [ref=e753]: La galería automática me ha cambiado la vida. Subo las fotos de mis trabajos y se organizan solas. Mis clientas ven todo mi trabajo de color y cortes.
+            - generic [ref=e754]: ”
+          - generic [ref=e756]:
+            - generic [ref=e757]:
+              - img [ref=e758]
+              - generic [ref=e761]: +60%
+              - generic [ref=e762]: mejora
+            - generic [ref=e763]:
+              - img [ref=e764]
+              - generic [ref=e767]: 2 meses
+              - generic [ref=e768]: tiempo
+            - generic [ref=e769]:
+              - img [ref=e770]
+              - generic [ref=e772]: Sevilla
+              - generic [ref=e773]: ubicación
+          - generic [ref=e775]:
+            - generic [ref=e776]: Diseño Beauty
+            - generic [ref=e777]: Sistema galería
+        - generic [ref=e782]:
+          - generic [ref=e784]:
+            - generic [ref=e787]: ML
+            - generic [ref=e788]:
+              - heading "María López" [level=3] [ref=e789]
+              - paragraph [ref=e790]: Hair Style
+              - generic [ref=e791]:
+                - img [ref=e792]
+                - generic [ref=e795]: Valencia
+            - generic [ref=e798]: 5/5
+          - generic [ref=e800]:
+            - generic [ref=e801]: “
+            - blockquote [ref=e802]: El sistema de reservas online es increíble. Ya no tengo que coger el móvil fuera de horario. Las clientas reservan ellas mismas y reciben recordatorios automáticos.
+            - generic [ref=e803]: ”
+          - generic [ref=e805]:
+            - generic [ref=e806]:
+              - img [ref=e807]
+              - generic [ref=e810]: "-80%"
+              - generic [ref=e811]: mejora
+            - generic [ref=e812]:
+              - img [ref=e813]
+              - generic [ref=e816]: 1 mes
+              - generic [ref=e817]: tiempo
+            - generic [ref=e818]:
+              - img [ref=e819]
+              - generic [ref=e821]: Valencia
+              - generic [ref=e822]: ubicación
+          - generic [ref=e824]:
+            - generic [ref=e825]: Diseño Modern
+            - generic [ref=e826]: Reservas online
+      - generic [ref=e833]:
+        - heading "Únete a 50+ Peluquerías Exitosas" [level=3] [ref=e834]
+        - paragraph [ref=e835]: Miles de clientes satisfechos ya disfrutan de su web perfecta
+        - generic [ref=e836]:
+          - generic [ref=e837]: Madrid
+          - generic [ref=e838]: Barcelona
+          - generic [ref=e839]: Valencia
+          - generic [ref=e840]: Sevilla
+          - generic [ref=e841]: Bilbao
+    - generic [ref=e850]:
+      - generic [ref=e852]:
+        - heading "Preguntas Frecuentes de Nuestras Peluqueras" [level=2] [ref=e853]
+        - paragraph [ref=e854]: Resolvemos todas tus dudas. Si no encuentras tu respuesta, contáctanos directamente.
+      - generic [ref=e856]:
+        - button "¿Realmente funciona para generar más clientes?" [ref=e860] [cursor=pointer]:
+          - generic [ref=e861]:
+            - heading "¿Realmente funciona para generar más clientes?" [level=3] [ref=e863]
+            - img [ref=e866]
+        - button "¿Qué pasa si no sé nada de tecnología?" [ref=e871] [cursor=pointer]:
+          - generic [ref=e872]:
+            - heading "¿Qué pasa si no sé nada de tecnología?" [level=3] [ref=e874]
+            - img [ref=e877]
+        - button "¿Puedo cancelar cuando quiera?" [ref=e882] [cursor=pointer]:
+          - generic [ref=e883]:
+            - heading "¿Puedo cancelar cuando quiera?" [level=3] [ref=e885]
+            - img [ref=e888]
+        - button "¿El precio incluye TODO lo necesario?" [ref=e893] [cursor=pointer]:
+          - generic [ref=e894]:
+            - heading "¿El precio incluye TODO lo necesario?" [level=3] [ref=e896]
+            - img [ref=e899]
+        - button "¿Cómo sé que no es una estafa?" [ref=e904] [cursor=pointer]:
+          - generic [ref=e905]:
+            - heading "¿Cómo sé que no es una estafa?" [level=3] [ref=e907]
+            - img [ref=e910]
+      - generic [ref=e918]:
+        - img [ref=e920]
+        - heading "¿Más dudas?" [level=3] [ref=e922]
+        - paragraph [ref=e923]: Estamos aquí para ayudarte. Contacta directamente con nuestro equipo especializado en peluquerías y resolvemos cualquier pregunta específica.
+        - generic [ref=e924]:
+          - button "Llamar ahora" [ref=e926] [cursor=pointer]:
+            - img [ref=e927]
+            - text: Llamar ahora
+          - button "Escribir email" [ref=e930] [cursor=pointer]:
+            - img [ref=e931]
+            - text: Escribir email
+        - generic [ref=e934]: Respuesta garantizada en menos de 2 horas
+    - generic [ref=e935]:
+      - generic [ref=e940]:
+        - generic [ref=e941]:
+          - generic [ref=e942]:
+            - heading "WebPeluquerías" [level=3] [ref=e943]
+            - paragraph [ref=e944]: Webs profesionales diseñadas exclusivamente para peluquerías. Más reservas, menos complicaciones.
+          - generic [ref=e945]:
+            - generic [ref=e946]:
+              - img [ref=e947]
+              - generic [ref=e949]: SSL Certificate Secured
+            - generic [ref=e950]:
+              - img [ref=e951]
+              - generic [ref=e954]: Empresa registrada en España
+            - generic [ref=e955]:
+              - img [ref=e956]
+              - generic [ref=e959]: Datos protegidos bajo GDPR/LOPD
+        - generic [ref=e960]:
+          - heading "Navegación" [level=4] [ref=e961]
+          - list [ref=e962]:
+            - listitem [ref=e963]:
+              - link "Inicio" [ref=e964] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e965]:
+              - link "Plantillas" [ref=e966] [cursor=pointer]:
+                - /url: /plantillas
+            - listitem [ref=e967]:
+              - link "Precios" [ref=e968] [cursor=pointer]:
+                - /url: /precios
+            - listitem [ref=e969]:
+              - link "Sobre Nosotros" [ref=e970] [cursor=pointer]:
+                - /url: /sobre-nosotros
+            - listitem [ref=e971]:
+              - link "Blog" [ref=e972] [cursor=pointer]:
+                - /url: /blog
+            - listitem [ref=e973]:
+              - link "Contacto" [ref=e974] [cursor=pointer]:
+                - /url: /contacto
+        - generic [ref=e975]:
+          - heading "Legal" [level=4] [ref=e976]
+          - list [ref=e977]:
+            - listitem [ref=e978]:
+              - link "Política de Privacidad" [ref=e979] [cursor=pointer]:
+                - /url: /legal/privacy
+            - listitem [ref=e980]:
+              - link "Términos de Servicio" [ref=e981] [cursor=pointer]:
+                - /url: /legal/terms
+            - listitem [ref=e982]:
+              - link "Política de Cookies" [ref=e983] [cursor=pointer]:
+                - /url: /legal/cookies
+            - listitem [ref=e984]:
+              - link "Aviso Legal" [ref=e985] [cursor=pointer]:
+                - /url: /legal/legal-notice
+            - listitem [ref=e986]:
+              - link "Política de Reembolso" [ref=e987] [cursor=pointer]:
+                - /url: /legal/refund
+        - generic [ref=e988]:
+          - generic [ref=e989]:
+            - heading "Contacto" [level=4] [ref=e990]
+            - generic [ref=e991]:
+              - generic [ref=e992]:
+                - img [ref=e993]
+                - link "hola@webpeluquerias.es" [ref=e996] [cursor=pointer]:
+                  - /url: mailto:hola@webpeluquerias.es
+              - generic [ref=e997]:
+                - img [ref=e998]
+                - link "+34 900 123 456" [ref=e1000] [cursor=pointer]:
+                  - /url: tel:+34900123456
+              - generic [ref=e1001]:
+                - img [ref=e1002]
+                - generic [ref=e1005]:
+                  - generic [ref=e1006]: Lun-Vie 9:00-18:00
+                  - generic [ref=e1007]: Horario España (CET)
+          - generic [ref=e1008]:
+            - heading "Síguenos" [level=4] [ref=e1009]
+            - generic [ref=e1010]:
+              - link "Instagram" [ref=e1011] [cursor=pointer]:
+                - /url: https://instagram.com/webpeluquerias
+                - img [ref=e1013]
+              - link "Facebook" [ref=e1016] [cursor=pointer]:
+                - /url: https://facebook.com/webpeluquerias
+                - img [ref=e1018]
+              - link "YouTube" [ref=e1021] [cursor=pointer]:
+                - /url: https://youtube.com/webpeluquerias
+                - img [ref=e1023]
+              - link "TikTok" [ref=e1026] [cursor=pointer]:
+                - /url: https://tiktok.com/@webpeluquerias
+                - img [ref=e1028]
+      - generic [ref=e1035]:
+        - generic [ref=e1036]:
+          - paragraph [ref=e1037]: © 2024 WebPeluquerías. Todos los derechos reservados.
+          - generic [ref=e1038]:
+            - img [ref=e1039]
+            - generic [ref=e1042]: Madrid, España
+        - generic [ref=e1043]:
+          - generic [ref=e1044]:
+            - img [ref=e1045]
+            - generic [ref=e1047]: GDPR Compliant
+          - generic [ref=e1048]:
+            - img [ref=e1049]
+            - generic [ref=e1052]: 256-bit SSL
+  - generic [ref=e1054]:
+    - paragraph [ref=e1056]:
+      - text: Utilizamos cookies para mejorar tu experiencia y analizar el tráfico de nuestro sitio.
+      - link "Política de privacidad" [ref=e1057] [cursor=pointer]:
+        - /url: /privacy
+    - generic [ref=e1058]:
+      - button "Rechazar" [ref=e1059] [cursor=pointer]
+      - button "Aceptar" [ref=e1060] [cursor=pointer]
+```
