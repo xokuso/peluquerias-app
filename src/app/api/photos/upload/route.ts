@@ -13,7 +13,7 @@ import {
   saveFileToDisk,
   ensureUploadDirectories
 } from '@/lib/file-utils.server'
-import sharp from 'sharp'
+// Sharp is not compatible with Edge Runtime, using Node.js runtime instead
 
 export async function POST(request: NextRequest) {
   try {
@@ -75,22 +75,23 @@ export async function POST(request: NextRequest) {
     const originalFilename = generateUniqueFilename(file.name)
     const thumbnailFilename = `thumb_${originalFilename}`
 
-    // Get image metadata using sharp
+    // Get image metadata using sharp (dynamic import for Vercel compatibility)
     let metadata: { width?: number; height?: number } = {}
+    let optimizedBuffer: Buffer = buffer
+    let thumbnailBuffer: Buffer | null = null
+
     try {
+      const sharp = (await import('sharp')).default
+
+      // Get metadata
       const sharpInstance = sharp(buffer)
       const info = await sharpInstance.metadata()
       metadata = {
         width: info.width,
         height: info.height
       }
-    } catch (error) {
-      console.warn('Could not extract image metadata:', error)
-    }
 
-    // Create optimized main image
-    let optimizedBuffer: Buffer = buffer
-    try {
+      // Create optimized main image
       optimizedBuffer = await sharp(buffer)
         .resize(1920, 1080, {
           fit: 'inside',
@@ -98,13 +99,8 @@ export async function POST(request: NextRequest) {
         })
         .jpeg({ quality: 85, progressive: true })
         .toBuffer()
-    } catch (error) {
-      console.warn('Could not optimize image, using original:', error)
-    }
 
-    // Create thumbnail
-    let thumbnailBuffer: Buffer | null = null
-    try {
+      // Create thumbnail
       thumbnailBuffer = await sharp(buffer)
         .resize(300, 300, {
           fit: 'cover',
@@ -113,7 +109,7 @@ export async function POST(request: NextRequest) {
         .jpeg({ quality: 80 })
         .toBuffer()
     } catch (error) {
-      console.warn('Could not create thumbnail:', error)
+      console.warn('Could not process image with sharp:', error)
     }
 
     // Save files to disk
