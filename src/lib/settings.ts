@@ -1,5 +1,4 @@
-import { promises as fs } from 'fs';
-import path from 'path';
+// File system imports removed for serverless compatibility
 
 export interface SystemSettings {
   siteName: string;
@@ -62,45 +61,31 @@ const defaultSettings: SystemSettings = {
   }
 };
 
-const SETTINGS_FILE = path.join(process.cwd(), 'data', 'settings.json');
-
-export async function ensureDataDirectory() {
-  const dataDir = path.join(process.cwd(), 'data');
-  try {
-    await fs.access(dataDir);
-  } catch {
-    await fs.mkdir(dataDir, { recursive: true });
-  }
-}
+// File system functions removed for serverless compatibility
 
 export async function getSettings(): Promise<SystemSettings> {
-  try {
-    await ensureDataDirectory();
-    const data = await fs.readFile(SETTINGS_FILE, 'utf-8');
-    const settings = JSON.parse(data);
-    // Merge with defaults to ensure all fields exist
-    return { ...defaultSettings, ...settings };
-  } catch {
-    // File doesn't exist or is corrupted, return defaults
-    return defaultSettings;
-  }
+  // For production/serverless, use only defaults + environment variables
+  const settings: SystemSettings = {
+    ...defaultSettings,
+    siteUrl: process.env.NEXT_PUBLIC_APP_URL || defaultSettings.siteUrl,
+    stripePublishableKey: process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || '',
+    stripeSecretKey: process.env.STRIPE_SECRET_KEY || '',
+    contactEmail: process.env.ADMIN_EMAIL || defaultSettings.contactEmail,
+    supportEmail: process.env.ADMIN_EMAIL || defaultSettings.supportEmail,
+    maintenanceMode: process.env.MAINTENANCE_MODE === 'true' || false,
+    siteName: process.env.NEXT_PUBLIC_APP_NAME || defaultSettings.siteName
+  };
+
+  return settings;
 }
 
 export async function saveSettings(settings: SystemSettings): Promise<void> {
-  try {
-    await ensureDataDirectory();
-    await fs.writeFile(SETTINGS_FILE, JSON.stringify(settings, null, 2), 'utf-8');
-  } catch (error) {
-    console.error('Error saving settings:', error);
-    throw new Error('Failed to save settings');
-  }
+  // In production/serverless, we can't save to file system
+  // This would need to save to database instead
+  console.warn('Settings save attempted in serverless environment - not implemented');
+  throw new Error('Settings save not available in serverless environment');
 }
 
 export async function isMaintenanceMode(): Promise<boolean> {
-  try {
-    const settings = await getSettings();
-    return settings.maintenanceMode;
-  } catch {
-    return false;
-  }
+  return process.env.MAINTENANCE_MODE === 'true' || false;
 }
