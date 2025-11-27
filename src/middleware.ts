@@ -46,12 +46,17 @@ const publicRoutes = [
   '/checkout/success/autologin',
   '/client/setup',
   '/api/auth',
+  '/api/auth/*',
   '/api/create-payment-intent',
   '/api/webhooks',
+  '/api/webhooks/*',
   '/api/stripe/webhooks',
   '/api/stripe/checkout',
   '/api/stripe/session/*',
   '/api/settings',
+  '/api/simplified-checkout',
+  '/api/check-domain',
+  '/api/templates',
 ];
 
 // Helper function to check if a path matches a pattern
@@ -171,13 +176,16 @@ export default withAuth(
       if (
         pathname.startsWith('/api/auth') ||
         pathname.startsWith('/api/webhooks') ||
+        pathname === '/api/stripe/webhooks' ||
         pathname.startsWith('/api/stripe/webhooks') ||
         pathname === '/api/create-payment-intent' ||
         pathname === '/api/check-domain' ||
         pathname === '/api/simplified-checkout' ||
         pathname.startsWith('/api/stripe/session') ||
-        pathname === '/api/templates'
+        pathname === '/api/templates' ||
+        pathname === '/api/stripe/checkout'
       ) {
+        console.log(`🔓 Allowing public API access to: ${pathname}`);
         return response;
       }
 
