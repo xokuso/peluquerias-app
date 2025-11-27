@@ -94,6 +94,8 @@ export default withAuth(
     if (
       pathname.startsWith('/_next') ||
       pathname.startsWith('/static') ||
+      pathname.startsWith('/images/') ||
+      pathname.startsWith('/public/') ||
       pathname.includes('.')
     ) {
       return response;
@@ -250,7 +252,8 @@ export const config = {
      * - _next/static (static files)
      * - _next/image (image optimization files)
      * - favicon.ico, robots.txt (static files)
+     * - images/ (public images)
      */
-    '/((?!_next/static|_next/image|favicon.ico|robots.txt).*)',
+    '/((?!_next/static|_next/image|favicon.ico|robots.txt|images/).*)',
   ],
 };

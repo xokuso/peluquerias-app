@@ -79,7 +79,7 @@ export async function getSettings(): Promise<SystemSettings> {
   return settings;
 }
 
-export async function saveSettings(settings: SystemSettings): Promise<void> {
+export async function saveSettings(_settings: SystemSettings): Promise<void> {
   // In production/serverless, we can't save to file system
   // This would need to save to database instead
   console.warn('Settings save attempted in serverless environment - not implemented');
