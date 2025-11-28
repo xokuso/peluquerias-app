@@ -81,103 +81,102 @@ export const authOptions: NextAuthOptions = {
           }
 
           // Try database authentication
-          let user;
           try {
-            user = await prisma.user.findUnique({
-            where: { email: validatedData.email },
-            select: {
-              id: true,
-              email: true,
-              name: true,
-              password: true,
-              role: true,
-              image: true,
-              salonName: true,
-              phone: true,
-              city: true,
-              address: true,
-              website: true,
-              businessType: true,
-              hasCompletedOnboarding: true,
-              isActive: true,
-              emailVerified: true,
-              lockUntil: true,
-              loginAttempts: true,
-            },
-          });
+            const user = await prisma.user.findUnique({
+              where: { email: validatedData.email },
+              select: {
+                id: true,
+                email: true,
+                name: true,
+                password: true,
+                role: true,
+                image: true,
+                salonName: true,
+                phone: true,
+                city: true,
+                address: true,
+                website: true,
+                businessType: true,
+                hasCompletedOnboarding: true,
+                isActive: true,
+                emailVerified: true,
+                lockUntil: true,
+                loginAttempts: true,
+              },
+            });
 
-          if (!user || !user.password) {
-            throw new Error('Invalid email or password');
-          }
-
-          // Check if account is locked
-          if (user.lockUntil && user.lockUntil > new Date()) {
-            const minutesLeft = Math.ceil(
-              (user.lockUntil.getTime() - Date.now()) / (1000 * 60)
-            );
-            throw new Error(
-              `Account locked. Please try again in ${minutesLeft} minutes`
-            );
-          }
-
-          // Check if account is active
-          if (!user.isActive) {
-            throw new Error('Account is deactivated. Please contact support.');
-          }
-
-          // Verify password
-          const isPasswordValid = await compare(validatedData.password, user.password);
-
-          if (!isPasswordValid) {
-            // Increment login attempts
-            const newLoginAttempts = user.loginAttempts + 1;
-            const maxAttempts = 5;
-            
-            if (newLoginAttempts >= maxAttempts) {
-              // Lock account for 30 minutes
-              await prisma.user.update({
-                where: { id: user.id },
-                data: {
-                  loginAttempts: newLoginAttempts,
-                  lockUntil: new Date(Date.now() + 30 * 60 * 1000),
-                },
-              });
-              throw new Error('Too many failed attempts. Account locked for 30 minutes.');
-            } else {
-              await prisma.user.update({
-                where: { id: user.id },
-                data: { loginAttempts: newLoginAttempts },
-              });
+            if (!user || !user.password) {
               throw new Error('Invalid email or password');
             }
-          }
 
-          // Reset login attempts and update last login
-          await prisma.user.update({
-            where: { id: user.id },
-            data: {
-              loginAttempts: 0,
-              lockUntil: null,
-              lastLogin: new Date(),
-            },
-          });
+            // Check if account is locked
+            if (user.lockUntil && user.lockUntil > new Date()) {
+              const minutesLeft = Math.ceil(
+                (user.lockUntil.getTime() - Date.now()) / (1000 * 60)
+              );
+              throw new Error(
+                `Account locked. Please try again in ${minutesLeft} minutes`
+              );
+            }
 
-          // Return user data for JWT with complete profile information
-          return {
-            id: user.id,
-            email: user.email,
-            name: user.name,
-            role: user.role,
-            image: user.image,
-            salonName: user.salonName,
-            phone: user.phone,
-            city: user.city,
-            address: user.address,
-            website: user.website,
-            businessType: user.businessType,
-            hasCompletedOnboarding: user.hasCompletedOnboarding,
-            isActive: user.isActive,
-          };
+            // Check if account is active
+            if (!user.isActive) {
+              throw new Error('Account is deactivated. Please contact support.');
+            }
+
+            // Verify password
+            const isPasswordValid = await compare(validatedData.password, user.password);
+
+            if (!isPasswordValid) {
+              // Increment login attempts
+              const newLoginAttempts = user.loginAttempts + 1;
+              const maxAttempts = 5;
+
+              if (newLoginAttempts >= maxAttempts) {
+                // Lock account for 30 minutes
+                await prisma.user.update({
+                  where: { id: user.id },
+                  data: {
+                    loginAttempts: newLoginAttempts,
+                    lockUntil: new Date(Date.now() + 30 * 60 * 1000),
+                  },
+                });
+                throw new Error('Too many failed attempts. Account locked for 30 minutes.');
+              } else {
+                await prisma.user.update({
+                  where: { id: user.id },
+                  data: { loginAttempts: newLoginAttempts },
+                });
+                throw new Error('Invalid email or password');
+              }
+            }
+
+            // Reset login attempts and update last login
+            await prisma.user.update({
+              where: { id: user.id },
+              data: {
+                loginAttempts: 0,
+                lockUntil: null,
+                lastLogin: new Date(),
+              },
+            });
+
+            // Return user data for JWT with complete profile information
+            return {
+              id: user.id,
+              email: user.email,
+              name: user.name,
+              role: user.role,
+              image: user.image,
+              salonName: user.salonName,
+              phone: user.phone,
+              city: user.city,
+              address: user.address,
+              website: user.website,
+              businessType: user.businessType,
+              hasCompletedOnboarding: user.hasCompletedOnboarding,
+              isActive: user.isActive,
+            };
           } catch (dbError) {
             console.log('Database connection failed, using mock credentials only:', dbError instanceof Error ? dbError.message : 'Unknown error');
             throw new Error('Invalid email or password');
