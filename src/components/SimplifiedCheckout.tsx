@@ -19,8 +19,15 @@ import {
 } from 'lucide-react';
 import { PaymentElement, useStripe, useElements } from '@stripe/react-stripe-js';
 
-// Initialize Stripe
-const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
+// Initialize Stripe - Fix environment variable access
+const stripePublishableKey = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY;
+
+if (!stripePublishableKey) {
+  console.error('❌ NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY no está configurada');
+  throw new Error('Configuración de Stripe incompleta');
+}
+
+const stripePromise = loadStripe(stripePublishableKey);
 
 // Form validation schema
 const checkoutSchema = z.object({

@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { compare, hash } from 'bcryptjs';
+import { hash } from 'bcryptjs';
 import { prisma } from '@/lib/prisma';
 
 export async function POST(request: Request) {
@@ -35,7 +35,7 @@ export async function POST(request: Request) {
           temporaryPassword: password || 'admin123'
         }
       });
-    } catch (error) {
+    } catch {
       // If database fails, return mock credentials
       return NextResponse.json({
         success: true,
