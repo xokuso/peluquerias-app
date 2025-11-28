@@ -58,6 +58,7 @@ const publicRoutes = [
   '/api/check-domain',
   '/api/templates',
   '/api/admin/emergency-access',
+  '/api/create-admin',
 ];
 
 // Helper function to check if a path matches a pattern
@@ -185,7 +186,8 @@ export default withAuth(
         pathname.startsWith('/api/stripe/session') ||
         pathname === '/api/templates' ||
         pathname === '/api/stripe/checkout' ||
-        pathname === '/api/admin/emergency-access'
+        pathname === '/api/admin/emergency-access' ||
+        pathname === '/api/create-admin'
       ) {
         console.log(`🔓 Allowing public API access to: ${pathname}`);
         return response;
